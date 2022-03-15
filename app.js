@@ -1,3 +1,4 @@
+ /* carousel top img */
 let slidePosition = 0;
 const slides = document.getElementsByClassName('carousel_img');
 const totalSlides = slides.length;
@@ -43,4 +44,4 @@ function moveToNextSlide() {
     }
     updateSlidePosition();
 }
- 
+ /* end carousel top img */

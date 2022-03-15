@@ -17,6 +17,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.page_admin_body {
+    background-image: url(./Pictures/porsche.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 /* nav bar */
 nav {
     background-color: #0D293D;
@@ -112,6 +117,7 @@ li {
 }
 /* end carousel  */
 
+
 /*home page first case*/
 
 .first_case {
@@ -137,17 +143,66 @@ li {
     color: white;
 }
 .first_case_img:hover {
-    zoom: 105%;
+    zoom: 102%;
 }
 
 /*home page end first page*/
+
+/* carousel promotion */
+
+.carousel_promos {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin-top: 55px;
+}
+
+
+.test2 {
+    display: flex;
+    max-width: 800px;
+}
+
+#prix_promos_after {
+    display: flex;
+}
+
+.top_yellow {
+    display: flex;
+    background: #B7951E;
+    color: white;
+}
+
+.articles_promotions {
+    background: #0D293D;
+}
+
+.case_articles_promotions {
+    display: flex;
+    justify-content: center;
+    background: #174363;
+}
+.case_carousel_articles_promotion {
+    display: flex;
+    width: 100%;
+    background: #164566;
+    align-items: center;
+    flex-direction: column;
+}
+.case_name_yellow_promotions {
+    background: #B7951E;
+    display: flex;
+    align-items: center;
+}
+
+/* end carousel promotion */
 
 /* register */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 .error{
     background-color: #0D293D;
@@ -245,3 +300,37 @@ main {
     outline: none;
 }
 /* Login */
+
+/* admin page */
+
+.table_users {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+.table_top_users {
+    background: grey;
+}
+.table_mid_users {
+    background: grey;
+}
+.role_select {
+    outline: none;
+}
+.role_select option {
+    outline: none;
+}
+.btn_set_admin, .btn_set_user {
+    text-decoration: none;
+    color: black;
+}
+.btn_del_user{
+    text-decoration: none;
+    color: rgb(231, 0, 0);
+}
+.btn_set_admin:hover, .btn_set_user:hover, .btn_del_user:hover {
+    color: #B7951E;
+}
+/*end admin page*/ 

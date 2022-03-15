@@ -77,7 +77,50 @@
             </div>
 
         </div>
-    
+
+    <div class="carousel_promos">
+
+        
+
+            <div class="top_yellow">
+                <h3>Promotions</h3>
+            </div>
+        <form class="test2" action="Articles.php" method="GET">
+
+            <?php 
+            require_once'./models/librairies/Artcles.php';
+            while($bdd_promotions = $req->fetch()){ ?>
+
+                <div class="case_articles_promotions">  
+
+                    <div class="case_carousel_articles_promotion">
+
+                     <img width="260px" src="Pictures/<?php echo $bdd_promotions['picture_articles_promotion'];  ?>"> 
+                     <p id="prix_promos"><strike style="color:red"><?php echo $bdd_promotions['prix_before_promotion']; ?>$</strike></p>
+
+            <!-- calcul -15% articles en promotions -->
+
+                     <div id="prix_promos_after"><?php 
+                     $promotion_calcul = $bdd_promotions['prix_before_promotion'];
+                     $result = ($promotion_calcul*15)/100;
+                     $final_price = $promotion_calcul-$result;
+                     echo $final_price;
+                     ?><p>$</p></div>
+
+          <!-- fin calcul -15% articles en promotions -->
+
+                <div class="case_name_yellow_promotions">
+                    <?php echo $bdd_promotions['nom_promotion']; ?>
+                </div>
+                
+                </div>
+
+            </div>
+          <?php }?>
+        </form>
+
+    </div>
+       
     </main>
     <script src="app.js"></script>
     </body>

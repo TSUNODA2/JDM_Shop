@@ -1,34 +1,6 @@
 <?php 
 session_start();
-
-$bdd = new PDO('mysql:host=localhost;dbname=jdm_shop;charset=utf8', 'root', '');
-
-if(isset($_POST['email']) && isset($_POST['password']))
-{
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
-
-    if(!empty($email) AND !empty($password))
-    {
-        $req = $bdd->prepare("SELECT email, password FROM register WHERE email = ? AND password = ?");
-        $req->execute(array($email, $password));
-        $userexist = $req->rowCount();
-        if($userexist == 1)
-        {
-            // $userInfo = $req->fetch();
-            // $_SESSION['id'] = $userInfo['id'];
-            // $_SESSION['email'] = $userInfo['email'];
-            // header('location : landing.php?id=' .$_SESSION['id']);
-
-        }else {
-            echo "mauvais mdps ou email";
-        }
-    }else
-     {
-         echo "ca ne marche pas";
-     }
-}
-
+require_once'./models/config.php'
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +44,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
     
     <main class="main_login">
   
-    <form method="POST" action="">
+    <form method="POST" action="log.php">
 
             <ul class="login_page">
 
@@ -130,6 +102,41 @@ if(isset($_POST['email']) && isset($_POST['password']))
             ?>
 
                 <li class="title_login"><h1>LOGIN</h1></li>
+
+                <?php 
+                    if(isset($_GET['log_err']))
+                    {
+                        $err_log = htmlspecialchars($_GET['log_err']);
+
+                        switch($err_log)
+                        {
+                            case 'password_bad' :
+                                ?>
+                                <div class="error_log">
+                                    <strong>Erreur</strong>mot de passe incorrect !
+                                </div>
+                                <?php
+                                break;
+                            
+                            case 'mail_bad' :
+                                ?>
+                                <div class="error_log">
+                                    <strong>Erreur</strong>Votre email est incorect !
+                                </div>
+                                <?php
+                                break;
+
+                            case 'empty_log' :
+                                ?>
+                                <div class="error_log">
+                                    <strong>Erreur</strong>Entrer tout les champs demander !
+                                </div>
+                                <?php
+                                break;
+                                
+                        }
+                    }
+                ?>
 
                 <li class="mail">
 

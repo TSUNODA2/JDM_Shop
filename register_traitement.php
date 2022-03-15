@@ -31,14 +31,19 @@ if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['email']
                     {
                         if($password == $password_check)
                         {
-                            $password = hash('sha256', $password);
+                            $password =  password_hash($password, PASSWORD_DEFAULT);
 
-                            $insert = $bdd->prepare('INSERT INTO register(nom, prenom, email, password) VALUES(:nom, :prenom, :email, :password)');
+                            $role = "user";
+                            $urlPicture = "user.png";
+
+                            $insert = $bdd->prepare('INSERT INTO register(nom, prenom, email, password, role, urlPicture) VALUES(:nom, :prenom, :email, :password, :role, :urlPicture)');
                             $insert->execute(array(
                                 'nom' => $nom,
                                 'prenom' => $prenom,
                                 'email' => $email,
-                                'password' => $password
+                                'password' => $password,
+                                'role' => $role,
+                                'urlPicture' => $urlPicture
                             ));
                             header('Location: register.php?reg_err=succes');
 
