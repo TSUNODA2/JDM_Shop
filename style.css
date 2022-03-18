@@ -303,6 +303,13 @@ main {
 
 /* admin page */
 
+.admin_title {
+    color: white;
+    margin-top: 100px;
+}
+
+/* user */
+
 .table_users {
     display: flex;
     margin-top: 50px;
@@ -310,12 +317,10 @@ main {
     justify-content: center;
     background: white;
 }
-.table_top_users {
+.table_top_users, .table_mid_users {
     background: grey;
 }
-.table_mid_users {
-    background: grey;
-}
+
 .role_select {
     outline: none;
 }
@@ -326,11 +331,77 @@ main {
     text-decoration: none;
     color: black;
 }
-.btn_del_user{
+.btn_del_user, .btn_del_articles{
     text-decoration: none;
     color: rgb(231, 0, 0);
 }
-.btn_set_admin:hover, .btn_set_user:hover, .btn_del_user:hover {
+.btn_set_admin:hover, .btn_set_user:hover, .btn_del_user:hover, .btn_del_articles:hover {
     color: #B7951E;
 }
+/* end user */
+
+/* articles change  */
+
+.produits_modif {
+    margin-top: 50px;
+}
+#input_articles_admin, #prix_articles_admin, #image_article_admin{
+    text-align: center;
+    outline: none;
+    background: rgb(160, 160, 160);
+}
+.table_produits_modif {
+    background: white;
+}
+.table_top_articles, .table_mid_articles {
+    background: grey;
+}
+.btn_edit_article{
+    background: none;
+    border: none;
+    color: black;
+    font-size: medium;
+}
+.btn_edit_article:hover{
+    color: #B7951E;
+    cursor: pointer;
+}
+
+/* end articles change  */
+
+/* add articles */
+.div_add_article{
+    background: grey;
+    margin-top: 50px;
+}
+.table_add_article tr {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.table_add_article{
+    font-size: large;
+}
+.table_add_article td {
+    font-size: x-large
+}
+#prix_produit_add, #nom_produit_add, #picture_produit_add {
+    font-size: large;
+}
+.btn_send_article {
+    border-radius: 10px;
+    outline: none;
+    font-size: 25px;
+    background: #164566;
+    color: white;
+    border: none;
+}
+.btn_send_article:hover {
+    cursor: pointer;
+    color: #B7951E;
+    
+}
+/* end add articles */
+
 /*end admin page*/ 
