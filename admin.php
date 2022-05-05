@@ -62,7 +62,7 @@ require_once'./models/config.php'
                 </tr>
         
             <?php 
-            $recup_user = $bdd->query('SELECT * FROM register');
+            $recup_user = $bdd->query('SELECT * FROM user');
             while($user_admin = $recup_user->fetch())
             {
                 ?>
@@ -70,15 +70,15 @@ require_once'./models/config.php'
                     <tr class="table_mid_users">
 
                         <th><?= $user_admin['nom']?></th>
-                        <th><?= $user_admin['Prenom']?></th>           
+                        <th><?= $user_admin['prenom']?></th>           
                         <th><?= $user_admin['email']?></th>
 
 
                             <th> <?= $user_admin['role']?></th>
-                            <th><?= $user_admin['urlPicture']?></th>
-                            <th><a class="btn_del_user" href="./delete.php?id_register_delete=<?= $user_admin['id_register'] ?>">Delete</a></th>
-                            <th><a class="btn_set_admin" href="./role.php?id_register_admin=<?= $user_admin['id_register'] ?>">admin</a></th>
-                            <th><a class="btn_set_user" href="./role.php?id_register_user=<?= $user_admin['id_register'] ?>">user</a></th>
+                            <th><?= $user_admin['url_pictures']?></th>
+                            <th><a class="btn_del_user" href="./delete.php?id_register_delete=<?= $user_admin['id_user'] ?>">Delete</a></th>
+                            <th><a class="btn_set_admin" href="./role.php?id_register_admin=<?= $user_admin['id_user'] ?>">admin</a></th>
+                            <th><a class="btn_set_user" href="./role.php?id_register_user=<?= $user_admin['id_user'] ?>">user</a></th>
 
 
                     </tr>   
@@ -105,20 +105,20 @@ require_once'./models/config.php'
 
             </tr>
             <?php 
-            $recup_articles = $bdd->query('SELECT * FROM articles_promotions');
+            $recup_articles = $bdd->query('SELECT * FROM articles');
             while($article_admin = $recup_articles->fetch())
             { 
                 ?>
                 
                 <tr class="table_mid_articles">
 
-                    <form action="./articles_admin.php?id=<?=$article_admin['id_promotions']?>" method="post">
+                    <form action="./articles_admin.php?id=<?=$article_admin['id_articles']?>" method="post">
 
-                    <th><input type="text" name="nom_articles" id="input_articles_admin" value="<?= $article_admin['nom_promotion'] ?>"></th>
-                    <th><input type="text" value="<?= $article_admin['prix_before_promotion'] ?>  $" name="prix_articles_admin" id="prix_articles_admin" size="10"></th>
-                    <th><input type="text" name="image_article_admin" id="image_article_admin" value="<?= $article_admin['picture_articles_promotion'] ?>"></th>
-                    <th><a class="btn_del_articles" href="./delete.php?id_article_delete=<?= $article_admin['id_promotions'] ?>">delete</a></th>
-                    <th><input class="btn_edit_article" type="submit" name="modifier" value="modifier"></th>
+                    <th><input type="text" name="nom_articles_admin" id="input_articles_admin" value="<?= $article_admin['nom_articles'] ?>"></th>
+                    <th><input type="text" value="<?= $article_admin['prix_articles'] ?>  $" name="prix_articles_admin" id="prix_articles_admin" size="10"></th>
+                    <th><input type="text" name="articles_pictures_admin" id="image_article_admin" value="<?= $article_admin['articles_pictures'] ?>"></th>
+                    <th><a class="btn_del_articles" href="./delete.php?id_article_delete=<?= $article_admin['id_articles'] ?>">delete</a></th>
+                    <th><input class="btn_edit_article" type="submit" name="modifier" value="modifier"></th> 
                     
                     </form>
 
@@ -146,7 +146,7 @@ require_once'./models/config.php'
                         <td><h5>Nom produit :</h5></td>
 
                         <td>
-                            <input type="text" name="nom_promotion" id="nom_produit_add" placeholder="entrez le nom du produit">
+                            <input type="text" name="nom_articles" id="nom_produit_add" placeholder="entrez le nom du produit">
                         </td>
 
                     </tr>
@@ -155,14 +155,14 @@ require_once'./models/config.php'
 
                     <tr>
                         <td><h5>Prix produit :</h5></td>
-                        <td><input type="text" name="prix_before_promotion" id="prix_produit_add" placeholder="entrez le prix du produit"></td>
+                        <td><input type="text" name="prix_articles" id="prix_produit_add" placeholder="entrez le prix du produit"></td>
                     </tr>
                     
                     <br>
 
                     <tr>
-                        <td><h5>ajout image produit</h5></td>
-                        <td><input type="text" name="picture_articles_promotion" id="picture_produit_add" placeholder="entrez le lien de l'image"></td>
+                        <td><h5>ajout image produit :</h5></td>
+                        <td><input type="text" name="articles_pictures" id="picture_produit_add" placeholder="entrez le lien de l'image"></td>
                     </tr>
                     
                     <tr>

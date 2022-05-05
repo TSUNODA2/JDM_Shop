@@ -12,7 +12,7 @@ if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && 
     $password = htmlspecialchars($_POST['password']);
     $password_check = htmlspecialchars($_POST['password_check']);
 
-    $check = $bdd->prepare('SELECT email, password FROM register WHERE email = ?');
+    $check = $bdd->prepare('SELECT email, password FROM user WHERE email = ?');
     $check->execute(array($email));
     $data = $check->fetch();
     $row = $check->rowCount();
@@ -34,16 +34,16 @@ if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['email']
                             $password =  password_hash($password, PASSWORD_DEFAULT);
 
                             $role = "user";
-                            $urlPicture = "user.png";
+                            $url_picture = "user.png";
 
-                            $insert = $bdd->prepare('INSERT INTO register(nom, prenom, email, password, role, urlPicture) VALUES(:nom, :prenom, :email, :password, :role, :urlPicture)');
+                            $insert = $bdd->prepare('INSERT INTO user(nom, prenom, email, password, role, url_pictures) VALUES(:nom, :prenom, :email, :password, :role, :url_pictures)');
                             $insert->execute(array(
                                 'nom' => $nom,
                                 'prenom' => $prenom,
                                 'email' => $email,
                                 'password' => $password,
                                 'role' => $role,
-                                'urlPicture' => $urlPicture
+                                'url_pictures' => $url_picture
                             ));
                             header('Location: register.php?reg_err=succes');
 

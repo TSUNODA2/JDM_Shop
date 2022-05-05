@@ -197,6 +197,43 @@ li {
 
 /* end carousel promotion */
 
+/* merch article  */
+
+.bottom_article {
+    display: flex;
+    margin-top: 55px;
+}
+
+.article_merch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #0D293D;
+    max-width: 200px;
+}
+
+.merch_top {
+    background: #B7951E;
+    color: white;
+}
+.test3 {
+    display: flex;
+    max-width: 800px;
+}
+.merch_case {
+    display: flex;
+    flex-direction: column;
+}
+.name_merch {
+    background: #B7951E;
+}
+
+
+
+/* end merch article  */
+
 /* register */
 main {
     display: flex;
@@ -351,6 +388,7 @@ main {
     background: rgb(160, 160, 160);
 }
 .table_produits_modif {
+    font-size: large;
     background: white;
 }
 .table_top_articles, .table_mid_articles {
@@ -388,6 +426,7 @@ main {
 }
 #prix_produit_add, #nom_produit_add, #picture_produit_add {
     font-size: large;
+    outline: none;
 }
 .btn_send_article {
     border-radius: 10px;

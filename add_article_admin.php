@@ -2,18 +2,17 @@
 require_once'./models/config.php';
 
 
-if(isset($_POST['nom_promotion']) && isset($_POST['prix_before_promotion']) && isset($_POST['picture_articles_promotion']))
+if(isset($_POST['nom_articles']) && isset($_POST['prix_articles']) && isset($_POST['articles_pictures']))
 {
-            $nom_add = htmlspecialchars($_POST['nom_promotion']);
-            $prix_add = htmlspecialchars($_POST['prix_before_promotion']);
-            $picture_add = htmlspecialchars($_POST['picture_articles_promotion']);
+            $nom_add = htmlspecialchars($_POST['nom_articles']);
+            $prix_add = htmlspecialchars($_POST['prix_articles']);
+            $picture_add = htmlspecialchars($_POST['articles_pictures']);
 
             
-
-        if(!empty($_POST['nom_promotion']) AND !empty($_POST['prix_before_promotion']) AND !empty($_POST['picture_articles_promotion']))
+        if(!empty($_POST['nom_articles']) AND !empty($_POST['prix_articles']) AND !empty($_POST['articles_pictures']))
         {
             
-            $insert_article = $bdd->prepare('INSERT INTO articles_promotions(nom_promotion, prix_before_promotion, picture_articles_promotion)VALUES(?, ?, ?)');
+            $insert_article = $bdd->prepare('INSERT INTO articles(nom_articles, prix_articles, articles_pictures)VALUES(?, ?, ?)');
             $insert_article->execute(array($nom_add, $prix_add, $picture_add));
 
             header('Location: admin.php?add_err=succes');

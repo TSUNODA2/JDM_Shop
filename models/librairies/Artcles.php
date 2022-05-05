@@ -1,8 +1,9 @@
 <?php 
-session_start();
 require_once './models/config.php';
 
-$req = $bdd->query('SELECT nom_promotion, prix_before_promotion, picture_articles_promotion FROM articles_promotions');
+$req = $bdd->query('SELECT nom_articles, prix_articles, articles_pictures FROM articles WHERE id_theme_articles = 1');
+
+$merch = $bdd->query('SELECT nom_articles, prix_articles, articles_pictures FROM articles WHERE id_theme_articles = 2');
 
 
 ?>

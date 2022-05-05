@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,13 +98,13 @@
 
                     <div class="case_carousel_articles_promotion">
 
-                     <img width="260px" src="Pictures/<?php echo $bdd_promotions['picture_articles_promotion'];  ?>"> 
-                     <p id="prix_promos"><strike style="color:red"><?php echo $bdd_promotions['prix_before_promotion']; ?>$</strike></p>
+                     <img width="200px" src="Pictures/<?php echo $bdd_promotions['articles_pictures'];  ?>"> 
+                     <p id="prix_promos"><strike style="color:red"><?php echo $bdd_promotions['prix_articles']; ?>$</strike></p>
 
             <!-- calcul -15% articles en promotions -->
 
                      <div id="prix_promos_after"><?php 
-                     $promotion_calcul = $bdd_promotions['prix_before_promotion'];
+                     $promotion_calcul = $bdd_promotions['prix_articles'];
                      $result = ($promotion_calcul*15)/100;
                      $final_price = $promotion_calcul-$result;
                      echo $final_price;
@@ -110,7 +113,7 @@
           <!-- fin calcul -15% articles en promotions -->
 
                 <div class="case_name_yellow_promotions">
-                    <?php echo $bdd_promotions['nom_promotion']; ?>
+                    <?php echo $bdd_promotions['nom_articles']; ?>
                 </div>
                 
                 </div>
@@ -120,7 +123,49 @@
         </form>
 
     </div>
-       
+
+
+    <div class="bottom_article">
+
+        <div class="merch_case">
+
+        <div class="merch_top">
+
+            <h3>Merch</h3>
+                
+        </div>
+
+        <form class="test3" action="Artcles.php" method="GET">
+
+            
+            <?php 
+            require_once'./models/librairies/Artcles.php';
+            while($bdd_merch = $merch->fetch()){ ?>
+
+                <div class="article_merch">
+
+                    <img width="100px" src="Pictures/<?php echo $bdd_merch['articles_pictures'];  ?>" alt="merch picture">
+                    <p id="prix_merch"> <?php echo $bdd_merch['prix_articles']; ?> $</p>
+               
+                    <div class="name_merch">
+
+                        <?php echo $bdd_merch['nom_articles']; ?>
+
+                    </div>
+
+                </div>
+
+                
+            
+            <?php }?>
+            
+        </form>
+
+        </div>
+    
+    </div>
+
+
     </main>
     <script src="app.js"></script>
     </body>
