@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 require_once('./log.php');
 
 if(!isset($_SESSION["role"]))
@@ -35,8 +35,8 @@ if(!isset($_SESSION["role"]))
                 <li>
 
                     <a href="#"><img src="./Pictures/account" width="45%" alt=""></a>
-                    <a href="register.php" class="text_nav"> <?php echo "<p> Bienvenu" . ($_SESSION['email']) . "</p>"; ?> </a>
-
+                    <a href="register.php" class="text_nav">Bonjour, <?= $_SESSION['prenom']; ?></a>
+                    <a href="logout.php"><button>logout</button></a>
                 </li>
 
                 <li>

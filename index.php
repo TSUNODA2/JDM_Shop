@@ -3,36 +3,49 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
+
     <title>accueil</title>
 </head>
+
 <body>
     <header>
         <nav>
-            
+
             <ul>
                 <li>
-                    <a href="index.php" ><img src="./Pictures/logo jdm shop.png" width="7%" alt=""></a>
-                </li>
-
-                <li>
-                    <a href="#"><img src="./Pictures/phone" width="37%" alt=""></a>
-                    <a class="text_nav" href="#"><h3>Contactez-nous</h3></a>
+                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" width="7%" alt=""></a>
                 </li>
 
                 <li>
                     <a href="#"><img src="./Pictures/account" width="45%" alt=""></a>
-                    <a href="register.php" class="text_nav"><h3>Mon compte</h3></a>
+                    <a href="register.php" class="text_nav">
+                                                                     <?php 
+                                                                     if(empty($_SESSION['prenom']))
+                                                                     {
+                                                                         ?>
+                                                                         <a href="login.php">connectez-vous</a>
+                                                                         <?php
+                                                                     } else 
+                                                                     { ?>
+                                                                         <a href="user.php"><h3>bonjour, <?= $_SESSION['prenom']; ?></h3></a> 
+                                                                         <a href="logout.php"><button>logout</button></a>
+                                                                         <?php
+                                                                     }
+                                                                        ?>
+                    </a>
                 </li>
 
                 <li>
                     <a href="#"><img src="./Pictures/cart" width="50%" alt=""></a>
-                    <a href="#" class="text_nav"><h3>Panier</h3></a>
+                    <a href="#" class="text_nav">
+                        <h3>Panier</h3>
+                    </a>
                 </li>
 
             </ul>
@@ -66,106 +79,144 @@ session_start();
 
             <div class="first_case_articles">
 
-             <a href="#" class="first_case_img"><img src="./Pictures/jr.png" width="200" alt="jantes voiture"></a>
-             <a href="#" class="first_case_img"><img src="./Pictures/turbo-garrett-g25-550-072-ar-871389-5004s.png" width="200" alt="turbo"></a>
-            
+                <a href="#" class="first_case_img"><img src="./Pictures/jr.png" width="200" alt="jantes voiture"></a>
+                <a href="#" class="first_case_img"><img src="./Pictures/turbo-garrett-g25-550-072-ar-871389-5004s.png" width="200" alt="turbo"></a>
+
             </div>
 
-            
+
             <div class="first_case_yellow">
 
-             <a href="#"><h3>Jantes</h3></a>
-             <a href="#"><h3>Boost your engine !</h3></a>
+                <a href="#">
+                    <h3>Jantes</h3>
+                </a>
+                <a href="#">
+                    <h3>Boost your engine !</h3>
+                </a>
 
             </div>
 
         </div>
 
-    <div class="carousel_promos">
+        <div class="carousel_promos">
 
-        
+
 
             <div class="top_yellow">
                 <h3>Promotions</h3>
             </div>
-        <form class="test2" action="Articles.php" method="GET">
+            <form class="test2" action="Articles.php" method="GET">
 
-            <?php 
-            require_once'./models/librairies/Artcles.php';
-            while($bdd_promotions = $req->fetch()){ ?>
+                <?php
+                require_once './models/librairies/Artcles.php';
+                while ($bdd_promotions = $req->fetch()) { ?>
 
-                <div class="case_articles_promotions">  
+                    <div class="case_articles_promotions">
 
-                    <div class="case_carousel_articles_promotion">
+                        <div class="case_carousel_articles_promotion">
 
-                     <img width="200px" src="Pictures/<?php echo $bdd_promotions['articles_pictures'];  ?>"> 
-                     <p id="prix_promos"><strike style="color:red"><?php echo $bdd_promotions['prix_articles']; ?>$</strike></p>
+                            <img width="200px" src="Pictures/<?php echo $bdd_promotions['articles_pictures'];  ?>">
+                            <p id="prix_promos"><strike style="color:red"><?php echo $bdd_promotions['prix_articles']; ?>$</strike></p>
 
-            <!-- calcul -15% articles en promotions -->
+                            <!-- calcul -15% articles en promotions -->
 
-                     <div id="prix_promos_after"><?php 
-                     $promotion_calcul = $bdd_promotions['prix_articles'];
-                     $result = ($promotion_calcul*15)/100;
-                     $final_price = $promotion_calcul-$result;
-                     echo $final_price;
-                     ?><p>$</p></div>
+                            <div id="prix_promos_after"><?php
+                                                        $promotion_calcul = $bdd_promotions['prix_articles'];
+                                                        $result = ($promotion_calcul * 15) / 100;
+                                                        $final_price = $promotion_calcul - $result;
+                                                        echo $final_price;
+                                                        ?><p>$</p>
+                            </div>
 
-          <!-- fin calcul -15% articles en promotions -->
+                            <!-- fin calcul -15% articles en promotions -->
 
-                <div class="case_name_yellow_promotions">
-                    <?php echo $bdd_promotions['nom_articles']; ?>
-                </div>
-                
-                </div>
+                            <div class="case_name_yellow_promotions">
+                                <?php echo $bdd_promotions['nom_articles']; ?>
+                            </div>
 
-            </div>
-          <?php }?>
-        </form>
-
-    </div>
-
-
-    <div class="bottom_article">
-
-        <div class="merch_case">
-
-        <div class="merch_top">
-
-            <h3>Merch</h3>
-                
-        </div>
-
-        <form class="test3" action="Artcles.php" method="GET">
-
-            
-            <?php 
-            require_once'./models/librairies/Artcles.php';
-            while($bdd_merch = $merch->fetch()){ ?>
-
-                <div class="article_merch">
-
-                    <img width="100px" src="Pictures/<?php echo $bdd_merch['articles_pictures'];  ?>" alt="merch picture">
-                    <p id="prix_merch"> <?php echo $bdd_merch['prix_articles']; ?> $</p>
-               
-                    <div class="name_merch">
-
-                        <?php echo $bdd_merch['nom_articles']; ?>
+                        </div>
 
                     </div>
+                <?php } ?>
+            </form>
+
+        </div>
+
+
+        <div class="bottom_article">
+
+            <div class="merch_case">
+
+                <div class="merch_top">
+
+                    <h3>Merch</h3>
 
                 </div>
 
-                
-            
-            <?php }?>
-            
-        </form>
+                <form class="merch_form" action="Artcles.php" method="GET">
+
+
+                    <?php
+                    require_once './models/librairies/Artcles.php';
+                    while ($bdd_merch = $merch->fetch()) { ?>
+
+                        <div class="article_merch">
+
+                                <img class="img_articles" width="45%" src="Pictures/<?php echo $bdd_merch['articles_pictures'];  ?>" alt="merch picture">
+
+                                <div class="testimg">
+                                    <div class="testt">Ajouter au panier</div>
+                                </div>
+
+                            <p id="prix_merch"> <?php echo $bdd_merch['prix_articles']; ?> $</p>
+
+                            <div class="name_merch">
+
+                                <?php echo $bdd_merch['nom_articles']; ?>
+
+                            </div>
+
+                        </div>
+
+                    <?php } ?>
+
+                </form>
+
+            </div>
+
+            <div class="ecu_case">
+
+                <div class="ecu_top">
+
+                    <h3>ECU</h3>
+
+                </div>
+
+                <form class="top_article" action="Articles.php" method="get">
+                    <?php
+                    require_once './models/librairies/Artcles.php';
+                    while ($bdd_ecu = $ecu->fetch()) { ?>
+                        <div class="article_ecu">
+                            <img class="img_ecu" width="50%" src="Pictures/<?php echo $bdd_ecu['articles_pictures']; ?>" alt="ecu pictures">
+
+                            <div class="mid_info_ecu">
+
+                                <p id="prix_ecu"> <?php echo $bdd_ecu['prix_articles']; ?> $</p>
+                                
+                            </div>
+
+                            <div class="name_ecu">
+                                <?php echo $bdd_ecu['nom_articles']; ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </form>
+
+            </div>
 
         </div>
-    
-    </div>
 
 
     </main>
     <script src="app.js"></script>
-    </body>
+</body>

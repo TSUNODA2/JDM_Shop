@@ -2,73 +2,90 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+
 body {
     background-image: url(./Pictures/background\ home.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
-.body_login{
+
+.body_login {
     background-image: url(./Pictures/gt86.drift.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .body_register {
     background-image: url(./Pictures/r8\ lms.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .page_admin_body {
     background-image: url(./Pictures/porsche.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 /* nav bar */
 nav {
     background-color: #0D293D;
 }
+
 ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
     list-style-type: none;
 }
+
 li {
     display: flex;
     align-items: center;
     margin: 0;
 }
+
 .logo_top {
     width: 20%;
 }
+
 .search_top {
     display: flex;
     width: 10%;
     align-items: center;
 }
+
 .search_bar {
     border-radius: 30px;
     outline: none;
     width: 10vw;
     height: 2.5vh;
 }
+
 .button_search {
     background: none;
     margin-top: 2%;
 }
-.contact, .compte, .panier {
+
+.contact,
+.compte,
+.panier {
     display: flex;
     align-content: center;
     align-items: center;
 }
+
 .text_nav {
     text-decoration: none;
     list-style: none;
     color: white;
 }
+
 .text_nav:hover {
     cursor: pointer;
     color: #B7951E;
 }
+
 /* nav bar */
 
 /* carousel  */
@@ -79,13 +96,16 @@ li {
     position: relative;
     height: 500px;
 }
+
 .carousel .carousel_img,
 .carousel .carousel_img--hidden {
     display: none;
 }
+
 .carousel .carousel_img img {
     width: 800px;
 }
+
 .carousel .carousel_img--visible {
     display: block;
 }
@@ -98,6 +118,7 @@ li {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .carousel .carousel_actions button {
     border-radius: 50px;
     font-size: xx-large;
@@ -105,16 +126,20 @@ li {
     background: none;
     border: 0;
 }
+
 .carousel .carousel_actions button:hover {
     cursor: pointer;
     color: rgb(238, 255, 0);
 }
+
 .carousel .carousel_actions button#carousel_button--prev {
     margin-left: 30px;
 }
+
 .carousel .carousel_actions button#carousel_button--next {
     margin-right: 30px;
 }
+
 /* end carousel  */
 
 
@@ -126,6 +151,7 @@ li {
     width: 800px;
     background: #0D293D;
 }
+
 .first_case_articles {
     display: flex;
     justify-content: space-around;
@@ -137,11 +163,13 @@ li {
     width: 800px;
     background: #B7951E;
 }
+
 .first_case_yellow a {
     margin-left: 40px;
     text-decoration: none;
     color: white;
 }
+
 .first_case_img:hover {
     zoom: 102%;
 }
@@ -182,13 +210,15 @@ li {
     justify-content: center;
     background: #174363;
 }
+
 .case_carousel_articles_promotion {
-    display: flex;
+    display:flex;
     width: 100%;
     background: #164566;
     align-items: center;
     flex-direction: column;
 }
+
 .case_name_yellow_promotions {
     background: #B7951E;
     display: flex;
@@ -201,32 +231,106 @@ li {
 
 .bottom_article {
     display: flex;
-    margin-top: 55px;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10%;
 }
 
 .article_merch {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    background: #0D293D;
-    max-width: 200px;
+    width: 40%;
+    margin-top: 5%;
+    background: #164566;
+    margin-left: 5%;
+    margin-right: 5%;
+    /* min-width: 70%; */
+    /* justify-content: center; */
 }
 
-.merch_top {
+.article_ecu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 40%;
+    margin-top: 5%;
+    background: #164566;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.img_articles, .img_ecu {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.article_merch img:hover {
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+img:hover .testimg {
+    opacity: 1;
+} 
+
+.testimg:hover {
+    cursor: pointer;
+    opacity: 1;
+    color: #B7951E;
+}
+
+.testimg {
+  display: none;
+  color: white;
+  position: absolute;
+  text-align: center;
+}
+
+.merch_top, .ecu_top {
     background: #B7951E;
     color: white;
 }
-.test3 {
+
+.merch_form, .top_article {
     display: flex;
-    max-width: 800px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: #0D293D;
+    /* max-width: 70%; */
 }
+
 .merch_case {
     display: flex;
     flex-direction: column;
+    width: 45%;
 }
-.name_merch {
+
+.ecu_case {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.mid_info_ecu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.prix_merch, .prix_ecu {
+    align-self: flex-end;
+}
+
+.name_merch, .name_ecu {
+    display: flex;
+    justify-content: center;
+    width: 100% ;
     background: #B7951E;
 }
 
@@ -241,12 +345,14 @@ main {
     align-items: center;
     height: 100%;
 }
-.error{
+
+.error {
     background-color: #0D293D;
     color: red;
     font-size: x-large;
 }
-.register_page{
+
+.register_page {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -255,7 +361,8 @@ main {
     width: 40%;
     background-color: #0d293daf;
 }
-.title_register{
+
+.title_register {
     align-self: center;
 }
 
@@ -264,29 +371,35 @@ main {
     width: 20vw;
     height: 3vh;
 }
+
 .register_page h3 {
     color: white;
 }
+
 .register_page h1 {
     color: #B7951E;
 }
+
 .button_send {
     cursor: pointer;
     background: #B7951E;
     border-color: white;
     border-radius: 10px;
 }
+
 .login_link a {
     text-decoration: none;
     color: #B7951E;
 }
+
 .login_link a:hover {
     color: grey;
 }
+
 /* REGISTER */
 
 /* Login */
- .login_page{
+.login_page {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -298,7 +411,7 @@ main {
     background-color: #0d293daf;
 }
 
-.title_login{
+.title_login {
     color: #B7951E;
 }
 
@@ -319,6 +432,7 @@ main {
     width: 150px;
     height: 30px;
 }
+
 .btnSendLog:hover {
     cursor: pointer;
     color: white;
@@ -331,11 +445,13 @@ main {
     flex-direction: column;
     color: white;
 }
+
 .motDePasse input {
     font-size: large;
     margin-top: 10px;
     outline: none;
 }
+
 /* Login */
 
 /* admin page */
@@ -354,27 +470,39 @@ main {
     justify-content: center;
     background: white;
 }
-.table_top_users, .table_mid_users {
+
+.table_top_users,
+.table_mid_users {
     background: grey;
 }
 
 .role_select {
     outline: none;
 }
+
 .role_select option {
     outline: none;
 }
-.btn_set_admin, .btn_set_user {
+
+.btn_set_admin,
+.btn_set_user {
     text-decoration: none;
     color: black;
 }
-.btn_del_user, .btn_del_articles{
+
+.btn_del_user,
+.btn_del_articles {
     text-decoration: none;
     color: rgb(231, 0, 0);
 }
-.btn_set_admin:hover, .btn_set_user:hover, .btn_del_user:hover, .btn_del_articles:hover {
+
+.btn_set_admin:hover,
+.btn_set_user:hover,
+.btn_del_user:hover,
+.btn_del_articles:hover {
     color: #B7951E;
 }
+
 /* end user */
 
 /* articles change  */
@@ -382,25 +510,34 @@ main {
 .produits_modif {
     margin-top: 50px;
 }
-#input_articles_admin, #prix_articles_admin, #image_article_admin{
+
+#input_articles_admin,
+#prix_articles_admin,
+#image_article_admin,
+#theme_admin {
     text-align: center;
     outline: none;
     background: rgb(160, 160, 160);
 }
+
 .table_produits_modif {
     font-size: large;
     background: white;
 }
-.table_top_articles, .table_mid_articles {
+
+.table_top_articles,
+.table_mid_articles {
     background: grey;
 }
-.btn_edit_article{
+
+.btn_edit_article {
     background: none;
     border: none;
     color: black;
     font-size: medium;
 }
-.btn_edit_article:hover{
+
+.btn_edit_article:hover {
     color: #B7951E;
     cursor: pointer;
 }
@@ -408,26 +545,33 @@ main {
 /* end articles change  */
 
 /* add articles */
-.div_add_article{
+.div_add_article {
     background: grey;
     margin-top: 50px;
 }
+
 .table_add_article tr {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 10px;
 }
-.table_add_article{
+
+.table_add_article {
     font-size: large;
 }
+
 .table_add_article td {
     font-size: x-large
 }
-#prix_produit_add, #nom_produit_add, #picture_produit_add {
+
+#prix_produit_add,
+#nom_produit_add,
+#picture_produit_add {
     font-size: large;
     outline: none;
 }
+
 .btn_send_article {
     border-radius: 10px;
     outline: none;
@@ -436,11 +580,13 @@ main {
     color: white;
     border: none;
 }
+
 .btn_send_article:hover {
     cursor: pointer;
     color: #B7951E;
-    
+
 }
+
 /* end add articles */
 
-/*end admin page*/ 
+/*end admin page*/

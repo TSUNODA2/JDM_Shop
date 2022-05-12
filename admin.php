@@ -1,6 +1,17 @@
 <?php 
 session_start();
-require_once'./models/config.php'
+require_once'./models/config.php';
+
+if($_SESSION["role"] === "admin")
+{
+    
+} else if($_SESSION["role"] === "user")
+{
+    header("location: index.php?error=vous devez avoir un role admin pour acceder a cette page");
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +33,8 @@ require_once'./models/config.php'
                 </li>
 
                 <li>
-                    <a href="#"><img src="./Pictures/phone" width="37%" alt=""></a>
-                    <a class="text_nav" href="#"><h3>Contactez-nous</h3></a>
-                </li>
-
-                <li>
                     <a href="#"><img src="./Pictures/account" width="45%" alt=""></a>
-                    <a href="register.php" class="text_nav"><h3>Mon compte</h3></a>
+                    <a href="register.php" class="text_nav"><h3> bonjour, <?= $_SESSION['email']; ?> </h3></a>
                 </li>
 
                 <li>
@@ -42,6 +48,7 @@ require_once'./models/config.php'
     </header>
     <main class="main_admin_page">
 
+        {# edit of the role and delete of the users #}
 
         <h1 class="admin_title">UTILISATEUR</h1>
         <div class="user_modif">
@@ -88,6 +95,9 @@ require_once'./models/config.php'
             </table>
         </div>
 
+        {# end of edit and delete users #}
+
+        {# delete and modification of aticles #}
 
         <h1 class="admin_title">EDIT PRODUITS</h1>
 
@@ -100,6 +110,7 @@ require_once'./models/config.php'
                 <th>nom produit</th>
                 <th>prix produit</th>
                 <th>images articles</th>
+                <th>theme</th>
                 <th>delete</th>
                 <th>submit</th>
 
@@ -117,6 +128,7 @@ require_once'./models/config.php'
                     <th><input type="text" name="nom_articles_admin" id="input_articles_admin" value="<?= $article_admin['nom_articles'] ?>"></th>
                     <th><input type="text" value="<?= $article_admin['prix_articles'] ?>  $" name="prix_articles_admin" id="prix_articles_admin" size="10"></th>
                     <th><input type="text" name="articles_pictures_admin" id="image_article_admin" value="<?= $article_admin['articles_pictures'] ?>"></th>
+                    <th><input type="text" name="theme_admin" id="theme_admin" value="<?= $article_admin['id_theme_articles'] ?>"></th>
                     <th><a class="btn_del_articles" href="./delete.php?id_article_delete=<?= $article_admin['id_articles'] ?>">delete</a></th>
                     <th><input class="btn_edit_article" type="submit" name="modifier" value="modifier"></th> 
                     
@@ -129,6 +141,10 @@ require_once'./models/config.php'
 
             </table>
         </div>
+
+        {# end delete / modif of article #}
+
+        {# insert new articles #}
 
         <div class="div_add_article">
 
@@ -164,6 +180,13 @@ require_once'./models/config.php'
                         <td><h5>ajout image produit :</h5></td>
                         <td><input type="text" name="articles_pictures" id="picture_produit_add" placeholder="entrez le lien de l'image"></td>
                     </tr>
+
+                    <br>
+
+                    <tr>
+                        <td><h5>theme produit  :</h5></td>
+                        <td><input type="text" name="id_theme_articles" id="theme_admin" placeholder="entrez le theme de l'article"></td>
+                    </tr>
                     
                     <tr>
 
@@ -175,6 +198,8 @@ require_once'./models/config.php'
             </form>
 
         </div>
+
+        {# end insert new articles #}
 
     </main>
 </body>
