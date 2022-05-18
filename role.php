@@ -21,5 +21,4 @@ require_once'./models/config.php';
 
         }else echo "une erreur c'est produite !";
 
-
 ?>

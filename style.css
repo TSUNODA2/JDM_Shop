@@ -28,6 +28,7 @@ body {
 }
 
 /* nav bar */
+
 nav {
     background-color: #0D293D;
 }
@@ -45,34 +46,45 @@ li {
     margin: 0;
 }
 
-.logo_top {
-    width: 20%;
+.login_nav {
+    text-decoration: none;
+    color: white;
+    font-size: large;
 }
 
-.search_top {
+.login_nav:hover {
+    cursor: pointer;
+    color: #B7951E;
+}
+
+.user_nav {
     display: flex;
-    width: 10%;
     align-items: center;
+    width: 100%;
 }
 
-.search_bar {
-    border-radius: 30px;
-    outline: none;
-    width: 10vw;
-    height: 2.5vh;
+.logout_button {
+    margin-left: 5%;
 }
 
-.button_search {
+.logout_button button {
     background: none;
-    margin-top: 2%;
+    border: none;
+    color: red;
 }
 
-.contact,
-.compte,
-.panier {
-    display: flex;
-    align-content: center;
-    align-items: center;
+.logout_button button:hover {
+    cursor: pointer;
+    color: rgb(146, 0, 0);
+}
+
+.user_show {
+    text-decoration: none;
+    color: white;
+}
+
+.user_show:hover {
+    color: #B7951E;
 }
 
 .text_nav {
@@ -87,6 +99,21 @@ li {
 }
 
 /* nav bar */
+
+/* car list */
+
+.car_list {
+    display: flex;
+    width: 100%;
+    background: #344e61;
+}
+
+.R32_car_logo {
+    width: 100px;
+    height: 100px;
+    background-image: url(./Pictures/R32_logo.png);
+}
+/* end carlist */
 
 /* carousel  */
 .carousel {
@@ -103,11 +130,12 @@ li {
 }
 
 .carousel .carousel_img img {
-    width: 800px;
+    width: 100%;
 }
 
 .carousel .carousel_img--visible {
     display: block;
+    animation: carouselFade 0.5s;
 }
 
 .carousel .carousel_actions {
@@ -140,6 +168,16 @@ li {
     margin-right: 30px;
 }
 
+
+@keyframes carouselFade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: opacity linear;
+    }
+}
 /* end carousel  */
 
 
@@ -181,14 +219,16 @@ li {
 .carousel_promos {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    width: 60%;
+    background: #0D293D;
+    /* width: 51%; */
     margin-top: 55px;
 }
 
 
 .test2 {
     display: flex;
-    max-width: 800px;
+    /* max-width: 800px; */
 }
 
 #prix_promos_after {
@@ -202,27 +242,37 @@ li {
 }
 
 .articles_promotions {
-    background: #0D293D;
+    background: #ff00fb;
 }
 
 .case_articles_promotions {
     display: flex;
+    width: 20%;
+    border: solid 5px black;
     justify-content: center;
-    background: #174363;
+    background: #0D293D;
 }
 
 .case_carousel_articles_promotion {
     display:flex;
-    width: 100%;
+    justify-content: space-between;
+    /* margin-left: 4%; */
+    margin: 5%;
     background: #164566;
+    width: 100%;
     align-items: center;
     flex-direction: column;
+}
+
+.case_carousel_articles_promotion a:hover {
+    opacity: 0.3;
 }
 
 .case_name_yellow_promotions {
     background: #B7951E;
     display: flex;
-    align-items: center;
+    width: 100%;
+    justify-content: center;
 }
 
 /* end carousel promotion */
@@ -243,10 +293,8 @@ li {
     flex-wrap: wrap;
     align-items: center;
     width: 40%;
-    margin-top: 5%;
+    margin: 3%;
     background: #164566;
-    margin-left: 5%;
-    margin-right: 5%;
     /* min-width: 70%; */
     /* justify-content: center; */
 }
@@ -258,13 +306,17 @@ li {
     flex-wrap: wrap;
     align-items: center;
     width: 40%;
-    margin-top: 5%;
+    margin: 5%;
     background: #164566;
-    margin-left: 5%;
-    margin-right: 5%;
+}
+
+.article_ecu a:hover {
+    opacity: 0.3;
 }
 
 .img_articles, .img_ecu {
+    display: flex;
+    justify-content: center;
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -307,13 +359,13 @@ img:hover .testimg {
 .merch_case {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 35%;
 }
 
 .ecu_case {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 35%;
 }
 
 .mid_info_ecu {
@@ -337,6 +389,12 @@ img:hover .testimg {
 
 
 /* end merch article  */
+
+/* article page */
+
+
+
+/* end article page */
 
 /* register */
 main {
@@ -403,12 +461,12 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 50%;
+    margin-top: 30%;
     justify-content: space-around;
     padding: 0;
-    width: 450px;
+    width: 120%;
     height: 50vh;
-    background-color: #0d293daf;
+    background-color: #0d293dce;
 }
 
 .title_login {
@@ -425,12 +483,20 @@ main {
 .mail input {
     font-size: large;
     outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
     margin-top: 10px;
+    background: none;
 }
 
 .btnSendLog {
-    width: 150px;
+    width: 100%;
     height: 30px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 .btnSendLog:hover {
@@ -450,6 +516,10 @@ main {
     font-size: large;
     margin-top: 10px;
     outline: none;
+    background: none;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
 }
 
 /* Login */
@@ -550,6 +620,7 @@ main {
     margin-top: 50px;
 }
 
+
 .table_add_article tr {
     display: flex;
     align-items: center;
@@ -567,7 +638,8 @@ main {
 
 #prix_produit_add,
 #nom_produit_add,
-#picture_produit_add {
+#picture_produit_add,
+#theme_admin_add {
     font-size: large;
     outline: none;
 }

@@ -48,8 +48,6 @@ if($_SESSION["role"] === "admin")
     </header>
     <main class="main_admin_page">
 
-        {# edit of the role and delete of the users #}
-
         <h1 class="admin_title">UTILISATEUR</h1>
         <div class="user_modif">
             
@@ -95,10 +93,6 @@ if($_SESSION["role"] === "admin")
             </table>
         </div>
 
-        {# end of edit and delete users #}
-
-        {# delete and modification of aticles #}
-
         <h1 class="admin_title">EDIT PRODUITS</h1>
 
         <div class="produits_modif">
@@ -142,10 +136,6 @@ if($_SESSION["role"] === "admin")
             </table>
         </div>
 
-        {# end delete / modif of article #}
-
-        {# insert new articles #}
-
         <div class="div_add_article">
 
             <form action="./add_article_admin.php" method="post">
@@ -185,7 +175,7 @@ if($_SESSION["role"] === "admin")
 
                     <tr>
                         <td><h5>theme produit  :</h5></td>
-                        <td><input type="text" name="id_theme_articles" id="theme_admin" placeholder="entrez le theme de l'article"></td>
+                        <td><input type="text" name="id_theme_articles" id="theme_admin_add" placeholder="entrez le theme de l'article"></td>
                     </tr>
                     
                     <tr>
@@ -199,7 +189,6 @@ if($_SESSION["role"] === "admin")
 
         </div>
 
-        {# end insert new articles #}
 
     </main>
 </body>

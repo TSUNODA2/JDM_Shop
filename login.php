@@ -112,7 +112,7 @@ require_once'./models/config.php'
                             case 'password_bad' :
                                 ?>
                                 <div class="error_log">
-                                    <strong>Erreur</strong>mot de passe incorrect !
+                                    <strong>Erreur : </strong>mot de passe incorrect !
                                 </div>
                                 <?php
                                 break;
@@ -120,7 +120,7 @@ require_once'./models/config.php'
                             case 'mail_bad' :
                                 ?>
                                 <div class="error_log">
-                                    <strong>Erreur</strong>Votre email est incorect !
+                                    <strong>Erreur : </strong>Votre email est incorect !
                                 </div>
                                 <?php
                                 break;
@@ -128,7 +128,7 @@ require_once'./models/config.php'
                             case 'empty_log' :
                                 ?>
                                 <div class="error_log">
-                                    <strong>Erreur</strong>Entrer tout les champs demander !
+                                    <strong>Erreur : </strong>Entrer tout les champs demander !
                                 </div>
                                 <?php
                                 break;
@@ -140,7 +140,7 @@ require_once'./models/config.php'
                 <li class="mail">
 
                     <h3>Adresse email</h3>
-                    <input size="35" type="email" name="email" placeholder="Entrer votre adresse Email" id="" value="<?php if(isset($email)) { echo $email; } ?>">
+                    <input size="35" type="email" name="email" placeholder="Entrer votre adresse Email" value="<?php if(isset($email)) { echo $email; } ?>">
 
                 </li>
 

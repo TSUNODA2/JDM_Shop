@@ -15,30 +15,38 @@ session_start();
 
 <body>
     <header>
+
+        <!-- navigation bar -->
+
         <nav>
 
             <ul>
                 <li>
-                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" width="7%" alt=""></a>
+                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" width="10%" alt="logo page principal"></a>
                 </li>
 
                 <li>
-                    <a href="#"><img src="./Pictures/account" width="45%" alt=""></a>
+
                     <a href="register.php" class="text_nav">
                                                                      <?php 
                                                                      if(empty($_SESSION['prenom']))
                                                                      {
                                                                          ?>
-                                                                         <a href="login.php">connectez-vous</a>
+                                                                         <a class="login_nav" href="login.php">connectez-vous</a>
                                                                          <?php
                                                                      } else 
                                                                      { ?>
-                                                                         <a href="user.php"><h3>bonjour, <?= $_SESSION['prenom']; ?></h3></a> 
-                                                                         <a href="logout.php"><button>logout</button></a>
+                                                                        <div class="user_nav">
+                                                                         
+                                                                            <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
+                                                                            <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
+                                                                        
+                                                                        </div>
                                                                          <?php
                                                                      }
                                                                         ?>
                     </a>
+
                 </li>
 
                 <li>
@@ -51,21 +59,33 @@ session_start();
             </ul>
 
         </nav>
+        <div class="car_list">
+            <ul>
+                <li>
+                    <a class="R32_car_logo" href="#"></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- end navigation bar -->
+
     </header>
     <main>
+
+    <!-- carousel -->
 
         <div class="carousel">
 
             <div class="carousel_img carousel_img--visible">
-                <img src="./Pictures/michelin_carousel.jpg" alt="pneu michelin">
+                <a href="#"><img src="./Pictures/michelin_carousel.jpg" alt="pneu michelin"></a>
             </div>
 
             <div class="carousel_img">
-                <img src="./Pictures/shell_carousel.jpg" alt="huile moteur shell">
+                <a href="#"><img src="./Pictures/shell_carousel.jpg" alt="huile moteur shell"></a>
             </div>
 
             <div class="carousel_img">
-                <img src="./Pictures/motul nissan gtr.jpg" alt="mise en avant garage">
+                <a href="#"><img src="./Pictures/gt86.jpg" alt="huile moteur motul"></a>
             </div>
 
 
@@ -74,6 +94,8 @@ session_start();
                 <button id="carousel_button--next">&#8250;</button>
             </div>
         </div>
+
+        <!-- end carousel -->
 
         <div class="first_case">
 
@@ -111,11 +133,9 @@ session_start();
                 require_once './models/librairies/Artcles.php';
                 while ($bdd_promotions = $req->fetch()) { ?>
 
-                    <div class="case_articles_promotions">
-
                         <div class="case_carousel_articles_promotion">
 
-                            <img width="200px" src="Pictures/<?php echo $bdd_promotions['articles_pictures'];  ?>">
+                            <a href="./article.php?id_article_link=<?=$bdd_promotions['articles_pictures'] ?>"><img width="90%" src="Pictures/<?php echo $bdd_promotions['articles_pictures'];  ?>"></a>
                             <p id="prix_promos"><strike style="color:red"><?php echo $bdd_promotions['prix_articles']; ?>$</strike></p>
 
                             <!-- calcul -15% articles en promotions -->
@@ -136,7 +156,6 @@ session_start();
 
                         </div>
 
-                    </div>
                 <?php } ?>
             </form>
 
@@ -162,7 +181,7 @@ session_start();
 
                         <div class="article_merch">
 
-                                <img class="img_articles" width="45%" src="Pictures/<?php echo $bdd_merch['articles_pictures'];  ?>" alt="merch picture">
+                                <a class="img_articles" href="#"><img width="45%" src="Pictures/<?php echo $bdd_merch['articles_pictures'];  ?>" alt="merch picture"></a>
 
                                 <div class="testimg">
                                     <div class="testt">Ajouter au panier</div>
@@ -197,7 +216,7 @@ session_start();
                     require_once './models/librairies/Artcles.php';
                     while ($bdd_ecu = $ecu->fetch()) { ?>
                         <div class="article_ecu">
-                            <img class="img_ecu" width="50%" src="Pictures/<?php echo $bdd_ecu['articles_pictures']; ?>" alt="ecu pictures">
+                            <a class="img_ecu" href="#"><img width="50%" src="Pictures/<?php echo $bdd_ecu['articles_pictures']; ?>" alt="ecu pictures"></a>
 
                             <div class="mid_info_ecu">
 
