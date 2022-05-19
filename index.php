@@ -59,13 +59,6 @@ session_start();
             </ul>
 
         </nav>
-        <div class="car_list">
-            <ul>
-                <li>
-                    <a class="R32_car_logo" href="#"></a>
-                </li>
-            </ul>
-        </div>
 
         <!-- end navigation bar -->
 
@@ -135,7 +128,7 @@ session_start();
 
                         <div class="case_carousel_articles_promotion">
 
-                            <a href="./article.php?id_article_link=<?=$bdd_promotions['articles_pictures'] ?>"><img width="90%" src="Pictures/<?php echo $bdd_promotions['articles_pictures'];  ?>"></a>
+                            <a href="./article.php?id_article=<?=$bdd_promotions['id_articles'] ?> "><img width="90%" src="Pictures/<?php echo $bdd_promotions['articles_pictures'];  ?>"></a>
                             <p id="prix_promos"><strike style="color:red"><?php echo $bdd_promotions['prix_articles']; ?>$</strike></p>
 
                             <!-- calcul -15% articles en promotions -->

@@ -10,32 +10,54 @@
 <body class="body_register">
     <form action="register_traitement.php" method="POST">
     <header>
-    <nav>
-            
+
+        <!-- navigation bar -->
+
+        <nav>
+
             <ul>
                 <li>
-                    <a href="index.php" ><img src="./Pictures/logo jdm shop.png" width="7%" alt=""></a>
+                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" width="10%" alt="logo page principal"></a>
                 </li>
 
                 <li>
-                    <a href="#"><img src="./Pictures/phone" width="37%" alt=""></a>
-                    <a class="text_nav" href="#"><h3>Contactez-nous</h3></a>
-                </li>
 
-                <li>
-                    <a href="#"><img src="./Pictures/account" width="45%" alt=""></a>
-                    <a href="register.php" class="text_nav"><h3>Mon compte</h3></a>
+                    <a href="register.php" class="text_nav">
+                                                                     <?php 
+                                                                     if(empty($_SESSION['prenom']))
+                                                                     {
+                                                                         ?>
+                                                                         <a class="login_nav" href="login.php">connectez-vous</a>
+                                                                         <?php
+                                                                     } else 
+                                                                     { ?>
+                                                                        <div class="user_nav">
+                                                                         
+                                                                            <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
+                                                                            <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
+                                                                        
+                                                                        </div>
+                                                                         <?php
+                                                                     }
+                                                                        ?>
+                    </a>
+
                 </li>
 
                 <li>
                     <a href="#"><img src="./Pictures/cart" width="50%" alt=""></a>
-                    <a href="#" class="text_nav"><h3>Panier</h3></a>
+                    <a href="#" class="text_nav">
+                        <h3>Panier</h3>
+                    </a>
                 </li>
 
             </ul>
 
         </nav>
-    </header>
+
+        <!-- end navigation bar -->
+
+    </header>   
     <main>
         <div class="register_page">
 
@@ -132,31 +154,31 @@
 
             <div class="nom">
                 <h3>Nom</h3>
-                <input type="text" name="nom" placeholder="Entrer votre nom" id="" value="<?php if(isset($nom)) { echo $nom;
+                <input type="text" name="nom" placeholder="Entrer votre nom" id="input_register" value="<?php if(isset($nom)) { echo $nom;
                  } ?>">
             </div>
 
             <div class="prenom">
                 <h3>Prenom</h3>
-                <input size="25" type="text" name="prenom" placeholder="Entrer votre prenom" id="">
+                <input size="25" type="text" name="prenom" placeholder="Entrer votre prenom" id="input_register">
             </div>
 
             <div class="mail">
                 <h3>Adresse Email</h3>
-                <input size="25" type="text" name="email" placeholder="Entrer votre adresse Email" id="" value="<?php if(isset($email)) { echo $email; } ?>">
+                <input size="25" type="text" name="email" placeholder="Entrer votre adresse Email" id="input_register" value="<?php if(isset($email)) { echo $email; } ?>">
             </div>
 
             <div class="motDePasse">
                 <h3>Mot de passe</h3>
-                <input size="25" type="password" name="password" placeholder="Entrer votre mot de passe" id="">
+                <input size="25" type="password" name="password" placeholder="Entrer votre mot de passe" id="input_register">
             </div>
 
             <div class="conf_motDePasse">
                 <h3>Confirmer votre mot de passe</h3>
-                <input size="25" type="password" name="password_check" placeholder="Confirmer votre mot de passe" id="">
+                <input size="25" type="password" name="password_check" placeholder="Confirmer votre mot de passe" id="input_register">
             </div>
 
-            <input type="submit">
+            <input class="button_register" type="submit">
 
             <div class="login_link">
                 <h3>Déjà inscrit ? <a href="login.php">LOGIN</a></h3>

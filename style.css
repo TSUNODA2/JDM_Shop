@@ -4,9 +4,7 @@
 }
 
 body {
-    background-image: url(./Pictures/background\ home.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: #03111c;
 }
 
 .body_login {
@@ -22,7 +20,11 @@ body {
 }
 
 .page_admin_body {
-    background-image: url(./Pictures/porsche.jpg);
+    background: #03111c;
+}
+
+.body_page_article {
+    background-image: url(./Pictures/r32_for_article.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -392,8 +394,35 @@ img:hover .testimg {
 
 /* article page */
 
+.article_case {
+    max-width: 80%;
+    margin-top: 2.5%;
+    background: #0d293dd3;
+}
 
+.title_article {
+    color: white;
+    margin-left: 5%;
+}
 
+.article_case_detail{
+    display: flex;
+}
+
+#prix_promos_article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#prix_promos_article h1 {
+    color: white;
+}
+
+.article_case_detail h4 {
+    margin-top: 5%;
+    color: white;
+}
 /* end article page */
 
 /* register */
@@ -417,17 +446,35 @@ main {
     justify-content: space-around;
     margin: 5%;
     width: 40%;
-    background-color: #0d293daf;
+    background-color: #0d293dd9;
 }
 
 .title_register {
     align-self: center;
 }
 
-.register_page input {
+#input_register {
+    font-size: large;
     outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin-top: 10px;
+    background: none;
     width: 20vw;
     height: 3vh;
+}
+
+.button_register {
+    background: none;
+    color: white;
+    border: solid white 1px;
+    border-radius: 5px;
+}
+
+.button_register:hover {
+    cursor: pointer;
+    background: #B7951E;
 }
 
 .register_page h3 {
@@ -584,7 +631,8 @@ main {
 #input_articles_admin,
 #prix_articles_admin,
 #image_article_admin,
-#theme_admin {
+#theme_admin,
+#dsc_articles {
     text-align: center;
     outline: none;
     background: rgb(160, 160, 160);
@@ -639,7 +687,8 @@ main {
 #prix_produit_add,
 #nom_produit_add,
 #picture_produit_add,
-#theme_admin_add {
+#theme_admin_add,
+#dsc_admin_add {
     font-size: large;
     outline: none;
 }

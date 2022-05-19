@@ -101,12 +101,13 @@ if($_SESSION["role"] === "admin")
 
             <tr class="table_top_articles">
 
-                <th>nom produit</th>
-                <th>prix produit</th>
-                <th>images articles</th>
-                <th>theme</th>
-                <th>delete</th>
-                <th>submit</th>
+                <th>Nom produit</th>
+                <th>Prix produit</th>
+                <th>Images articles</th>
+                <th>Thème</th>
+                <th>Déscription</th>
+                <th>Delete</th>
+                <th>Submit</th>
 
             </tr>
             <?php 
@@ -122,7 +123,10 @@ if($_SESSION["role"] === "admin")
                     <th><input type="text" name="nom_articles_admin" id="input_articles_admin" value="<?= $article_admin['nom_articles'] ?>"></th>
                     <th><input type="text" value="<?= $article_admin['prix_articles'] ?>  $" name="prix_articles_admin" id="prix_articles_admin" size="10"></th>
                     <th><input type="text" name="articles_pictures_admin" id="image_article_admin" value="<?= $article_admin['articles_pictures'] ?>"></th>
-                    <th><input type="text" name="theme_admin" id="theme_admin" value="<?= $article_admin['id_theme_articles'] ?>"></th>
+
+                    <th><input type="text" name="theme_article" id="theme_admin" value="<?= $article_admin['id_theme_articles'] ?>"></th>
+                    <th><textarea name="dsc_article" id="dsc_articles" cols="30" rows="5"><?= $article_admin['dsc_articles'] ?></textarea></th>
+                    
                     <th><a class="btn_del_articles" href="./delete.php?id_article_delete=<?= $article_admin['id_articles'] ?>">delete</a></th>
                     <th><input class="btn_edit_article" type="submit" name="modifier" value="modifier"></th> 
                     
@@ -176,6 +180,13 @@ if($_SESSION["role"] === "admin")
                     <tr>
                         <td><h5>theme produit  :</h5></td>
                         <td><input type="text" name="id_theme_articles" id="theme_admin_add" placeholder="entrez le theme de l'article"></td>
+                    </tr>
+
+                    <br>
+
+                    <tr>
+                        <td><h5>Déscription :</h5></td>
+                        <td><textarea name="dsc_articles" id="dsc_admin_add" cols="30" rows="5" placeholder="ajouter une déscription"></textarea></td>
                     </tr>
                     
                     <tr>
