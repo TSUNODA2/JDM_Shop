@@ -243,6 +243,15 @@ li {
     color: white;
 }
 
+.top_yellow a {
+    text-decoration: none;
+    color: white;
+}
+
+.top_yellow a:hover {
+    color: #0D293D;
+}
+
 .articles_promotions {
     background: #ff00fb;
 }
@@ -264,6 +273,7 @@ li {
     width: 100%;
     align-items: center;
     flex-direction: column;
+    max-width: 50%;
 }
 
 .case_carousel_articles_promotion a:hover {
@@ -348,6 +358,24 @@ img:hover .testimg {
 .merch_top, .ecu_top {
     background: #B7951E;
     color: white;
+}
+
+.merch_top a {
+    text-decoration: none;
+    color: white;
+}
+
+.merch_top a:hover {
+    color: #0D293D;
+}
+
+.ecu_top a {
+    text-decoration: none;
+    color: white;
+}
+
+.ecu_top a:hover {
+    color: #0D293D;
 }
 
 .merch_form, .top_article {
