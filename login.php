@@ -11,36 +11,59 @@ require_once'./models/config.php'
     <link rel="stylesheet" href="style.css">
     <title>login</title>
 </head>
-<body class="body_login"> 
-  
-    <header>
-        <nav>
-            
-            <ul>
-                <li>
-                    <a href="index.php" ><img src="./Pictures/logo jdm shop.png" width="7%" alt=""></a>
-                </li>
+ 
+<header>
 
-                <li>
-                    <a href="#"><img src="./Pictures/phone" width="37%" alt=""></a>
-                    <a class="text_nav" href="#"><h3>Contactez-nous</h3></a>
-                </li>
+<!-- navigation bar -->
 
-                <li>
-                    <a href="#"><img src="./Pictures/account" width="45%" alt=""></a>
-                    <a href="register.php" class="text_nav"><h3>Mon compte</h3></a>
-                </li>
+<nav>
 
-                <li>
-                    <a href="#"><img src="./Pictures/cart" width="50%" alt=""></a>
-                    <a href="#" class="text_nav"><h3>Panier</h3></a>
-                </li>
+    <ul>
+        <li>
+            <a href="index.php"><img src="./Pictures/logo jdm shop.png" width="10%" alt="logo page principal"></a>
+        </li>
 
-            </ul>
+        <li>
 
-        </nav>
-    </header>
+            <a href="register.php" class="text_nav">
+                                                             <?php 
+                                                             if(empty($_SESSION['prenom']))
+                                                             {
+                                                                 ?>
+                                                                 <a class="login_nav" href="login.php">connectez-vous</a>
+                                                                 <?php
+                                                             } else 
+                                                             { ?>
+                                                                <div class="user_nav">
+                                                                 
+                                                                    <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
+                                                                    <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
+                                                                
+                                                                </div>
+                                                                 <?php
+                                                             }
+                                                                ?>
+            </a>
+
+        </li>
+
+        <li>
+            <a href="#"><img src="./Pictures/cart" width="50%" alt=""></a>
+            <a href="#" class="text_nav">
+                <h3>Panier</h3>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- end navigation bar -->
+
+</header>
     
+    <body class="body_login">
+
     <main class="main_login">
   
     <form method="POST" action="log.php">

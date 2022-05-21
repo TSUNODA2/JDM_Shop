@@ -25,27 +25,55 @@ if($_SESSION["role"] === "admin")
 </head>
 <body class="page_admin_body">
 <header>
-        <nav>
-            
-            <ul>
-                <li>
-                    <a href="index.php" ><img src="./Pictures/logo jdm shop.png" width="7%" alt=""></a>
-                </li>
 
-                <li>
-                    <a href="#"><img src="./Pictures/account" width="45%" alt=""></a>
-                    <a href="register.php" class="text_nav"><h3> bonjour, <?= $_SESSION['email']; ?> </h3></a>
-                </li>
+<!-- navigation bar -->
 
-                <li>
-                    <a href="#"><img src="./Pictures/cart" width="50%" alt=""></a>
-                    <a href="#" class="text_nav"><h3>Panier</h3></a>
-                </li>
+<nav>
 
-            </ul>
+    <ul>
+        <li>
+            <a href="index.php"><img src="./Pictures/logo jdm shop.png" width="10%" alt="logo page principal"></a>
+        </li>
 
-        </nav>
-    </header>
+        <li>
+
+            <a href="register.php" class="text_nav">
+                                                             <?php 
+                                                             if(empty($_SESSION['prenom']))
+                                                             {
+                                                                 ?>
+                                                                 <a class="login_nav" href="login.php">connectez-vous</a>
+                                                                 <?php
+                                                             } else 
+                                                             { ?>
+                                                                <div class="user_nav">
+                                                                 
+                                                                    <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
+                                                                    <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
+                                                                
+                                                                </div>
+                                                                 <?php
+                                                             }
+                                                                ?>
+            </a>
+
+        </li>
+
+        <li>
+            <a href="#"><img src="./Pictures/cart" width="50%" alt=""></a>
+            <a href="#" class="text_nav">
+                <h3>Panier</h3>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- end navigation bar -->
+
+</header>
+
     <main class="main_admin_page">
 
         <h1 class="admin_title">UTILISATEUR</h1>

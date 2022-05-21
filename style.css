@@ -711,3 +711,74 @@ main {
 /* end add articles */
 
 /*end admin page*/
+
+/* main articles page */
+
+.main_case_wheel {
+    margin-left: 10%;
+    margin-top: 2%;
+    background: #0d293dd3;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.top_main_wheel {
+    width: 8%;
+    padding: 1%;
+    color: white;
+}
+
+.texte_explication_wheel {
+    display: flex;
+    justify-content: center;
+    color: rgb(97, 97, 97);
+}
+
+.article_wheel_case {
+    display: flex;
+    margin-left: 16%;
+    flex-wrap: wrap;
+    column-gap: 5%;
+    width: 70%;
+    max-width: 80%;
+    margin-top: 2%;
+}
+
+.top_main_case_wheel hr {
+    width: 99.8%;
+    background: white;
+}
+
+.article_main_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    /* margin: 3%; */
+}
+
+.article_main_info h3 {
+    color: #B7951E;
+}
+
+.picture_article_wheel {
+    display: flex;
+    justify-content: center;
+}
+
+.picture_article_wheel:hover {
+    opacity: 0.3;
+}
+
+.name_article_wheel {
+    text-decoration: none;
+    color: black;
+}
+
+.name_article_wheel:hover {
+    opacity: 0.3;
+}
+
+/* end main articles page */

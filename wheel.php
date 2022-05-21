@@ -1,27 +1,17 @@
 <?php
 session_start();
-require_once'./models/config.php';
-
-            $id_article = $_GET['id_article'];
-
-            if(trim($id_article) == '') {
-                
-                header('location: index.php');
-            }
+// require_once'./models/config.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
-    <title>accueil</title>
-
+    <title>wheel</title>
 </head>
 
 <header>
@@ -74,63 +64,52 @@ require_once'./models/config.php';
 
 </header>
 
+<body>
 
-<body class="body_page_article">
+<div class="main_case_wheel">
 
-<main>
+    <div class="top_main_case_wheel">
 
-     
-        <?php
-            
-            $recup_article = $bdd->query("SELECT * FROM articles WHERE id_articles = '$id_article'");
-            $show_article = $recup_article->fetch();
-                     
-        ?>
-            
-            <div class="article_case">
+        <div class="top_main_wheel">
 
-                <h1 class="title_article"> <?= $show_article['nom_articles']; ?> </h1>
+            <h1>Wheel</h1>
 
-                    <div class="article_case_detail">
-                    
-                        <img width="40%" src="./Pictures/<?= $show_article['articles_pictures']; ?>" alt="image article">
+        </div>
 
-                        <div class="promo_case">
+        <hr>
 
-                                <!-- calcul -15% articles en promotions -->
+        <br>
 
-                                <?php if( $show_article['id_theme_articles'] == 1 ) { ?>
+        <div class="texte_explication_wheel">
 
-                                <div id="prix_promos_article">
+            <h4>Retrouvez sûr cette page nos freins, nos jantes ainsi que nos plus beau accesoires </h4>
 
-                                    <h1 style="color: red"><strike> <?= $show_article['prix_articles']; ?> €</strike></h1>
+        </div>
 
-                                    <?php
+        <br>
 
-                                        $promotion_calcul = $show_article['prix_articles'];
-                                        $result = ($promotion_calcul * 15) / 100;
-                                        $final_price = $promotion_calcul - $result; 
-                                        
-                                    ?>
+        <hr>
 
-                                        <h1> <?= $final_price; ?> €</h1>
+    </div>
 
-                                </div>
+    <div class="article_wheel_case">
 
-                                <?php } else {?>
-                                    <h1> <?= $show_article['prix_articles']; ?> € </h1>
-                               <?php } ?>
+        <?php 
 
-                                <!-- fin calcul -15% articles en promotions -->
-                            
-                            <h4> <?= $show_article['dsc_articles']; ?> </h4>
+            require_once'./models/librairies/Artcles.php';
+            while($main_page_wheel = $wheel_bdd->fetch()) { ?>
 
-                        </div>
+                <div class="article_main_info">
 
-                    </div>
+                    <a class="picture_article_wheel" href="./article.php?id_article=<?= $main_page_wheel['id_articles']; ?> "><img width="50%" src="./Pictures/<?= $main_page_wheel['articles_pictures']; ?>" alt="image article de la categorie "></a>
+                    <a class="name_article_wheel" href="./article.php?id_article=<?= $main_page_wheel['id_articles']; ?> "><h4><?= $main_page_wheel['nom_articles']; ?></h4></a>
+                    <h3><?= $main_page_wheel['prix_articles']; ?> €</h3>
 
-            </div>
+                </div>            
 
-</main>
+        <?php } ?>
+
+    </div>
+
+</div>
 </body>
-

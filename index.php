@@ -70,7 +70,7 @@ session_start();
         <div class="carousel">
 
             <div class="carousel_img carousel_img--visible">
-                <a href="#"><img src="./Pictures/michelin_carousel.jpg" alt="pneu michelin"></a>
+                <a href="./wheel.php"><img src="./Pictures/michelin_carousel.jpg" alt="pneu michelin"></a>
             </div>
 
             <div class="carousel_img">
@@ -94,7 +94,7 @@ session_start();
 
             <div class="first_case_articles">
 
-                <a href="#" class="first_case_img"><img src="./Pictures/jr.png" width="200" alt="jantes voiture"></a>
+                <a href="./wheel.php" class="first_case_img"><img src="./Pictures/jr.png" width="200" alt="jantes voiture"></a>
                 <a href="#" class="first_case_img"><img src="./Pictures/turbo-garrett-g25-550-072-ar-871389-5004s.png" width="200" alt="turbo"></a>
 
             </div>

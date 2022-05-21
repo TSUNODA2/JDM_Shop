@@ -6,4 +6,6 @@ $req = $bdd->query('SELECT id_articles, nom_articles, prix_articles, articles_pi
 $merch = $bdd->query('SELECT nom_articles, prix_articles, articles_pictures FROM articles WHERE id_theme_articles = 2');
 
 $ecu = $bdd->query('SELECT nom_articles, prix_articles, articles_pictures FROM articles WHERE id_theme_articles = 3');
+
+$wheel_bdd = $bdd->query('SELECT id_articles, nom_articles, prix_articles, articles_pictures FROM articles WHERE id_theme_articles = 4');
 ?>

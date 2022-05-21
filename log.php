@@ -28,7 +28,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
                     
                 }else if($data["role"] === "user")
                 {
-                    header("location: user.php");
+                    header("location: index.php");
                 }
             }else header('location: login.php?log_err=password_bad');
             
