@@ -8,9 +8,9 @@ if($_SESSION["role"] === "admin")
 } else if($_SESSION["role"] === "user")
 {
     header("location: index.php?error=vous devez avoir un role admin pour acceder a cette page");
+} else if($_SESSION["role"] == '' ) {
+    header("location: index.php");
 }
-
-
 
 ?>
 
