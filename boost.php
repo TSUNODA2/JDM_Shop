@@ -67,6 +67,8 @@ session_start();
 
 <body>
 
+<!-- boost amelioration -->
+
 <div class="main_case_wheel">
 
     <div class="top_main_case_wheel">
@@ -96,7 +98,7 @@ session_start();
     <div class="article_wheel_case">
 
         <?php 
-
+            // take all the article of his categorie 
             require_once'./models/librairies/Artcles.php';
             while($main_page_upgrade = $upgrade_bdd->fetch()) { ?>
 
@@ -111,6 +113,6 @@ session_start();
         <?php } ?>
 
     </div>
-
+    <!-- end boos amelioration -->
 </div>
 </body>

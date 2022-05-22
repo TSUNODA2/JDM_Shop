@@ -1,6 +1,7 @@
 <?php 
 require_once'./models/config.php';
 
+// verify if the name are defined ans check if the not empty after that they insert into the bdd the element add in the input 
 
 if(isset($_POST['nom_articles']) && isset($_POST['prix_articles']) && isset($_POST['articles_pictures']) && isset($_POST['id_theme_articles']) && isset($_POST['dsc_articles']))
 {

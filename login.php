@@ -73,7 +73,7 @@ require_once'./models/config.php'
 
                 <?php 
 
-                
+            // if the log.php have a error this gonna show the error to the user in function of the error send by the log page
             if(isset($_GET['login_err']))
             {
                 $err = htmlspecialchars($_GET['login_err']);
@@ -176,7 +176,8 @@ require_once'./models/config.php'
                 </li>
 
                 <li><input class="btnSendLog" type="submit"></li>
-
+                
+                <!-- if the user are on the login page and she don't have a account this link gonna send him to the register page -->
                 <li class="login_link"><h3>Créer un compte ? <a href="register.php">REGISTER</a></h3></li>
             
             

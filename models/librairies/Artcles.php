@@ -1,6 +1,8 @@
 <?php 
 require_once './models/config.php';
 
+// All SQL queries for the different types of article 
+
 $req = $bdd->query('SELECT id_articles, nom_articles, prix_articles, articles_pictures FROM articles WHERE id_theme_articles = 1');
 
 $merch = $bdd->query('SELECT id_articles, nom_articles, prix_articles, articles_pictures FROM articles WHERE id_theme_articles = 2');

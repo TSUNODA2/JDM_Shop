@@ -1,6 +1,7 @@
 <?php 
 require_once'./models/config.php';
 
+        // when the admin press the button modifier in the admin page. that take all the modification appliced and updated on the bdd
         if(isset($_POST['modifier']))
         {
            

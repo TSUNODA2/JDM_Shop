@@ -67,6 +67,7 @@ session_start();
 
 <body>
 
+<!-- merch case -->
 <div class="main_case_wheel">
 
     <div class="top_main_case_wheel">
@@ -97,6 +98,7 @@ session_start();
 
         <?php 
 
+            // select all the items of the merch on his category
             require_once'./models/librairies/Artcles.php';
             while($main_page_merch = $merch->fetch()) { ?>
 
@@ -111,6 +113,6 @@ session_start();
         <?php } ?>
 
     </div>
-
+<!-- end merch case -->
 </div>
 </body>

@@ -3,18 +3,21 @@ let slidePosition = 0;
 const slides = document.getElementsByClassName('carousel_img');
 const totalSlides = slides.length;
 
+// right button for the next picture
 document.
  getElementById('carousel_button--next')
  .addEventListener("click", function(){
      moveToNextSlide();
  });
 
+//  left button for the previus picture
  document.
  getElementById('carousel_button--prev')
  .addEventListener("click", function(){
      moveToPrevSlide();
  });
 
+//  function for slide picture
 function updateSlidePosition() {
     for(let slide of slides) {
         slide.classList.remove('carousel_img--visible');
@@ -25,6 +28,7 @@ function updateSlidePosition() {
 
 }
 
+// function for move to the next picture
 function moveToNextSlide() {
     
     if (slidePosition === totalSlides - 1 ) {
@@ -35,6 +39,7 @@ function moveToNextSlide() {
     updateSlidePosition();
 }
 
+// function to move at the previus picture
  function moveToPrevSlide() {
 
     if (slidePosition === 0) {

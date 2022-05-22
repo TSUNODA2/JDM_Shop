@@ -2,6 +2,7 @@
 session_start();
 require_once'./models/config.php';
 
+            // check if she get a existant id and if the article dosn't exist the user as been redirected to the main page
             $id_article = $_GET['id_article'];
 
             if(trim($id_article) == '') {
@@ -80,9 +81,10 @@ require_once'./models/config.php';
 
 <main>
 
-     
+        <!-- article card -->
+        
         <?php
-            
+            // select all the elements of the article and selected the article in function of the click of the user 
             $recup_article = $bdd->query("SELECT * FROM articles WHERE id_articles = '$id_article'");
             $show_article = $recup_article->fetch();
                      
@@ -98,8 +100,9 @@ require_once'./models/config.php';
 
                         <div class="promo_case">
 
-                                <!-- calcul -15% articles en promotions -->
-
+                                <!-- calcul -15% articles promotions -->
+                                
+                                <!-- if the selectioned article are in promotion this get the price and put -15% on it. and if the article was not in promotion the price don't change -->
                                 <?php if( $show_article['id_theme_articles'] == 1 ) { ?>
 
                                 <div id="prix_promos_article">
@@ -122,8 +125,8 @@ require_once'./models/config.php';
                                     <h1> <?= $show_article['prix_articles']; ?> € </h1>
                                <?php } ?>
 
-                                <!-- fin calcul -15% articles en promotions -->
-                            
+                                <!-- end calcul -15% article promotion -->
+                    
                             <h4> <?= $show_article['dsc_articles']; ?> </h4>
 
                         </div>
@@ -131,6 +134,8 @@ require_once'./models/config.php';
                     </div>
 
             </div>
+
+            <!-- en article card -->
 
 </main>
 </body>

@@ -67,6 +67,8 @@ session_start();
 
 <body>
 
+<!-- promotion case -->
+
 <div class="main_case_wheel">
 
     <div class="top_main_case_wheel">
@@ -96,7 +98,7 @@ session_start();
     <div class="article_wheel_case">
 
         <?php 
-
+            // select all the items of the article in fucnction of the category 
             require_once'./models/librairies/Artcles.php';
             while($main_page_upgrade = $req->fetch()) { ?>
 
@@ -111,6 +113,6 @@ session_start();
         <?php } ?>
 
     </div>
-
+    <!-- end promotion case -->
 </div>
 </body>

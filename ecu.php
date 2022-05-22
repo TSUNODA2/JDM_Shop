@@ -67,6 +67,8 @@ session_start();
 
 <body>
 
+<!-- electronic page -->
+
 <div class="main_case_wheel">
 
     <div class="top_main_case_wheel">
@@ -97,6 +99,7 @@ session_start();
 
         <?php 
 
+            // take all the article for the electronic category
             require_once'./models/librairies/Artcles.php';
             while($main_page_ecu = $ecu->fetch()) { ?>
 
@@ -111,6 +114,8 @@ session_start();
         <?php } ?>
 
     </div>
+
+    <!-- end electronique page -->
 
 </div>
 </body>

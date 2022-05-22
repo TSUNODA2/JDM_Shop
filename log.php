@@ -2,6 +2,7 @@
 session_start();
 require_once './models/config.php';
 
+// verify if the user information enter exist on the bdd and she if the user have the role user they are send to the main page and in the user have a admin role she are send to the admin page
 if(isset($_POST['email']) && isset($_POST['password']))
 {
     $email = htmlspecialchars($_POST['email']);

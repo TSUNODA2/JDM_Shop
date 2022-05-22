@@ -30,9 +30,24 @@ body {
 }
 
 @media screen and (max-width: 800px){
+
     .body_page_article {
         background: #03111c;
     }
+    
+    .body_login {
+        background: #03111c;
+    }
+
+    .main_login {
+        display: flex;
+        width: 85%;
+    }
+
+    .body_register {
+        background: #03111c;
+    }
+
 }
 
 /* nav bar */
@@ -311,8 +326,6 @@ li {
     width: 40%;
     margin: 3%;
     background: #164566;
-    /* min-width: 70%; */
-    /* justify-content: center; */
 }
 
 .article_ecu {
@@ -387,7 +400,6 @@ img:hover .testimg {
     flex-wrap: wrap;
     justify-content: space-around;
     background: #0D293D;
-    /* max-width: 70%; */
 }
 
 .merch_case {
@@ -458,7 +470,7 @@ img:hover .testimg {
 }
 /* end article page */
 
-/* register */
+/* REGISTER */
 main {
     display: flex;
     flex-direction: column;
@@ -478,8 +490,7 @@ main {
     flex-direction: column;
     justify-content: space-around;
     margin: 5%;
-    width: 35%;
-    height: 150%;
+    width: 400px;
     background: #0d293dd9;
 }
 
@@ -495,8 +506,6 @@ main {
     color: white;
     margin-top: 5%;
     background: none;
-    width: 20vw;
-    height: 4vh;
 }
 
 .button_register {
@@ -540,6 +549,7 @@ main {
 /* END REGISTER */
 
 /* Login */
+
 .login_page {
     display: flex;
     align-items: center;
@@ -548,7 +558,7 @@ main {
     justify-content: space-around;
     padding: 0;
     width: 120%;
-    height: 50vh;
+    height: 350px;
     background-color: #0d293dce;
 }
 

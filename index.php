@@ -69,7 +69,8 @@ session_start();
     <!-- carousel -->
 
         <div class="carousel">
-
+            
+            <!-- pictures of the carousel -->
             <div class="carousel_img carousel_img--visible">
                 <a href="./wheel.php"><img src="./Pictures/michelin_carousel.jpg" alt="pneu michelin"></a>
             </div>
@@ -82,8 +83,8 @@ session_start();
                 <a href="./boost.php"><img src="./Pictures/gt86.jpg" alt="turbo timer gredy"></a>
             </div>
 
-
             <div class="carousel_actions">
+                <!-- button left and right for change the carousel picture -->
                 <button id="carousel_button--prev">&#8249;</button>
                 <button id="carousel_button--next">&#8250;</button>
             </div>
@@ -91,8 +92,11 @@ session_start();
 
         <!-- end carousel -->
 
+        <!-- case of the 2 main product of the website -->
+
         <div class="first_case">
 
+            <!-- this 2 case is a shortcut to go on the 2 main product list of the website -->
             <div class="case_articles">
 
                 <a href="./wheel.php" class="first_case_img"><img src="./Pictures/jr.png" width="45%" alt="jantes voiture"></a>
@@ -109,6 +113,9 @@ session_start();
             </div>
 
         </div>
+            <!-- end case of the 2 main product of the website -->
+
+        <!-- promotion case -->
 
         <div class="carousel_promos">
 
@@ -153,6 +160,9 @@ session_start();
 
         </div>
 
+        <!-- end promotion case -->
+
+        <!-- merch case -->
 
         <div class="bottom_article">
 
@@ -195,6 +205,10 @@ session_start();
 
             </div>
 
+            <!-- end promotion case -->
+
+            <!-- electronic case -->
+
             <div class="ecu_case">
 
                 <div class="ecu_top">
@@ -227,7 +241,9 @@ session_start();
 
         </div>
 
+        <!-- end electronic case -->
 
     </main>
+    <!-- link for the javascrip content -->
     <script src="app.js"></script>
 </body>

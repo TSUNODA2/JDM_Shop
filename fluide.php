@@ -67,6 +67,8 @@ session_start();
 
 <body>
 
+<!-- fluid page -->
+
 <div class="main_case_wheel">
 
     <div class="top_main_case_wheel">
@@ -97,6 +99,7 @@ session_start();
 
         <?php 
 
+            // take all the article of the fluid category
             require_once'./models/librairies/Artcles.php';
             while($main_page_fluide = $fluide_bdd->fetch()) { ?>
 
@@ -111,6 +114,8 @@ session_start();
         <?php } ?>
 
     </div>
+
+    <!-- end fluid page -->
 
 </div>
 </body>

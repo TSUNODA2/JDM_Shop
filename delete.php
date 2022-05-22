@@ -1,6 +1,8 @@
 <?php 
 require_once'./models/config.php';
 
+// when the admin press the button delete on the user case this delete the user of the bdd
+
 if(isset($_GET['id_register_delete']))
 {
     
@@ -12,6 +14,8 @@ if(isset($_GET['id_register_delete']))
 
 }else echo"you can't delete this";
 
+
+// when the admin press the button delete on the article case they delte the article on the bdd
 if(isset($_GET['id_article_delete']))
 {
    

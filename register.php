@@ -60,10 +60,13 @@
 
     </header>  
     <main>
+        <!-- register page -->
+
         <div class="register_page">
 
             <h1 class="title_register">REGISTER</h2>
             <?php 
+            // if the register traitement send a error this gona show to the user what thype of error has been return 
             if(isset($_GET['reg_err']))
             {
                 $err = htmlspecialchars($_GET['reg_err']);
@@ -155,8 +158,7 @@
 
             <div class="nom">
                 <h3>Nom</h3>
-                <input type="text" name="nom" placeholder="Entrer votre nom" id="input_register" value="<?php if(isset($nom)) { echo $nom;
-                 } ?>">
+                <input size="25" type="text" name="nom" placeholder="Entrer votre nom" id="input_register" value="<?php if(isset($nom)) { echo $nom; } ?>">
             </div>
 
             <div class="prenom">
@@ -188,5 +190,6 @@
         </div>
     </main>
     </form>
+    <!-- end register page -->
 </body>
 </html>

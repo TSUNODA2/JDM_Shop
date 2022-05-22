@@ -1,6 +1,8 @@
 <?php 
 require_once'./models/config.php';
 
+    // if the admin press for change user role this gonna uodate the role of the user 
+
         if(isset($_GET['id_register_admin']))
         {
             

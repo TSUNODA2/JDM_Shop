@@ -2,6 +2,8 @@
 session_start();
 require_once'./models/config.php';
 
+// verify if the user have the requested role for enter to this page, if the user dosn't have the role, the user has been return to the main page.
+
 if($_SESSION["role"] === "admin")
 {
     
@@ -37,6 +39,7 @@ if($_SESSION["role"] === "admin")
 
                 <li>
 
+                    <!-- check if the user has been connected if his not she give us a link to connect or register -->
                     <a href="register.php" class="text_nav">
                                                                      <?php 
                                                                      if(empty($_SESSION['prenom']))
@@ -77,6 +80,8 @@ if($_SESSION["role"] === "admin")
 
     <main class="main_admin_page">
 
+        <!-- user list -->
+
         <h1 class="admin_title">UTILISATEUR</h1>
         <div class="user_modif">
             
@@ -96,6 +101,7 @@ if($_SESSION["role"] === "admin")
                 </tr>
         
             <?php 
+            // select all the stuff of the user and put a while to show all the users of the bdd
             $recup_user = $bdd->query('SELECT * FROM user');
             while($user_admin = $recup_user->fetch())
             {
@@ -110,9 +116,9 @@ if($_SESSION["role"] === "admin")
 
                             <th> <?= $user_admin['role']?></th>
                             <th><?= $user_admin['url_pictures']?></th>
-                            <th><a class="btn_del_user" href="./delete.php?id_register_delete=<?= $user_admin['id_user'] ?>">Delete</a></th>
-                            <th><a class="btn_set_admin" href="./role.php?id_register_admin=<?= $user_admin['id_user'] ?>">admin</a></th>
-                            <th><a class="btn_set_user" href="./role.php?id_register_user=<?= $user_admin['id_user'] ?>">user</a></th>
+                            <th><a class="btn_del_user" href="./delete.php?id_register_delete=<?= $user_admin['id_user'] ?>">Delete</a></th> <!-- btn for delete the user -->
+                            <th><a class="btn_set_admin" href="./role.php?id_register_admin=<?= $user_admin['id_user'] ?>">admin</a></th> <!-- for set admin role to the user -->
+                            <th><a class="btn_set_user" href="./role.php?id_register_user=<?= $user_admin['id_user'] ?>">user</a></th> <!-- for set user role to the user -->
 
 
                     </tr>   
@@ -121,6 +127,10 @@ if($_SESSION["role"] === "admin")
             ?>
             </table>
         </div>
+
+        <!-- end user list -->
+
+        <!-- edit product -->
 
         <h1 class="admin_title">EDIT PRODUITS</h1>
 
@@ -139,7 +149,9 @@ if($_SESSION["role"] === "admin")
                 <th>Submit</th>
 
             </tr>
+
             <?php 
+            // select all the article and create a while for all the article 
             $recup_articles = $bdd->query('SELECT * FROM articles');
             while($article_admin = $recup_articles->fetch())
             { 
@@ -149,6 +161,8 @@ if($_SESSION["role"] === "admin")
 
                     <form action="./articles_admin.php?id=<?=$article_admin['id_articles']?>" method="post">
 
+                    <!-- the input show and we can modify all we want for the article -->
+
                     <th><input type="text" name="nom_articles_admin" id="input_articles_admin" value="<?= $article_admin['nom_articles'] ?>"></th>
                     <th><input type="text" value="<?= $article_admin['prix_articles'] ?>  $" name="prix_articles_admin" id="prix_articles_admin" size="10"></th>
                     <th><input type="text" name="articles_pictures_admin" id="image_article_admin" value="<?= $article_admin['articles_pictures'] ?>"></th>
@@ -156,8 +170,8 @@ if($_SESSION["role"] === "admin")
                     <th><input type="text" name="theme_article" id="theme_admin" value="<?= $article_admin['id_theme_articles'] ?>"></th>
                     <th><textarea name="dsc_article" id="dsc_articles" cols="30" rows="5"><?= $article_admin['dsc_articles'] ?></textarea></th>
                     
-                    <th><a class="btn_del_articles" href="./delete.php?id_article_delete=<?= $article_admin['id_articles'] ?>">delete</a></th>
-                    <th><input class="btn_edit_article" type="submit" name="modifier" value="modifier"></th> 
+                    <th><a class="btn_del_articles" href="./delete.php?id_article_delete=<?= $article_admin['id_articles'] ?>">delete</a></th> <!-- button to delete the article -->
+                    <th><input class="btn_edit_article" type="submit" name="modifier" value="modifier"></th> <!-- button modif to confirm the modification enter -->
                     
                     </form>
 
@@ -169,9 +183,15 @@ if($_SESSION["role"] === "admin")
             </table>
         </div>
 
+        <!-- end modif article -->
+
+        <!-- add article -->
+
         <div class="div_add_article">
 
             <form action="./add_article_admin.php" method="post">
+
+                <!-- table with all case to create a product -->
                 
                 <table class="table_add_article">
 
@@ -228,6 +248,7 @@ if($_SESSION["role"] === "admin")
             </form>
 
         </div>
+        <!-- end create article -->
 
 
     </main>

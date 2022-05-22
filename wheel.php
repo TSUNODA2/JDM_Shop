@@ -1,6 +1,5 @@
 <?php
 session_start();
-// require_once'./models/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +65,7 @@ session_start();
     </header>
 
 <body>
-
+<!-- wheel case -->
 <div class="main_case_wheel">
 
     <div class="top_main_case_wheel">
@@ -97,6 +96,7 @@ session_start();
 
         <?php 
 
+            // take all the items of the wheel section of the bdd
             require_once'./models/librairies/Artcles.php';
             while($main_page_wheel = $wheel_bdd->fetch()) { ?>
 
@@ -113,4 +113,5 @@ session_start();
     </div>
 
 </div>
+<!-- end wheel case -->
 </body>
