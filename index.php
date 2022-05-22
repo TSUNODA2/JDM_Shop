@@ -22,7 +22,7 @@ session_start();
 
             <ul>
                 <li>
-                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" width="10%" alt="logo page principal"></a>
+                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" style="width: 50px;" alt="logo page principal"></a>
                 </li>
 
                 <li>
@@ -50,8 +50,9 @@ session_start();
                 </li>
 
                 <li>
-                    <a href="#"><img src="./Pictures/cart" width="50%" alt=""></a>
-                    <a href="#" class="text_nav">
+                    
+                    <a class="panier_nav" href="#" class="text_nav">
+                        <img src="./Pictures/cart" style="width:40%;"  alt="">
                         <h3>Panier</h3>
                     </a>
                 </li>
@@ -92,22 +93,18 @@ session_start();
 
         <div class="first_case">
 
-            <div class="first_case_articles">
+            <div class="case_articles">
 
-                <a href="./wheel.php" class="first_case_img"><img src="./Pictures/jr.png" width="200" alt="jantes voiture"></a>
-                <a href="./boost.php" class="first_case_img"><img src="./Pictures/turbo-garrett-g25-550-072-ar-871389-5004s.png" width="200" alt="turbo"></a>
+                <a href="./wheel.php" class="first_case_img"><img src="./Pictures/jr.png" width="45%" alt="jantes voiture"></a>
+                <a href="#"><h3>Jantes</h3></a>
 
             </div>
 
 
-            <div class="first_case_yellow">
+            <div class="case_articles">
 
-                <a href="#">
-                    <h3>Jantes</h3>
-                </a>
-                <a href="#">
-                    <h3>Boost your engine !</h3>
-                </a>
+                <a href="./boost.php" class="first_case_img"><img src="./Pictures/turbo-garrett-g25-550-072-ar-871389-5004s.png" width="50%" alt="turbo"></a>
+                <a href="#"><h3>Boost !!!</h3></a>
 
             </div>
 

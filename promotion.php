@@ -16,53 +16,54 @@ session_start();
 
 <header>
 
-<!-- navigation bar -->
+        <!-- navigation bar -->
 
-<nav>
+        <nav>
 
-    <ul>
-        <li>
-            <a href="index.php"><img src="./Pictures/logo jdm shop.png" width="10%" alt="logo page principal"></a>
-        </li>
+            <ul>
+                <li>
+                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" style="width: 50px;" alt="logo page principal"></a>
+                </li>
 
-        <li>
+                <li>
 
-            <a href="register.php" class="text_nav">
-                                                             <?php 
-                                                             if(empty($_SESSION['prenom']))
-                                                             {
-                                                                 ?>
-                                                                 <a class="login_nav" href="login.php">connectez-vous</a>
-                                                                 <?php
-                                                             } else 
-                                                             { ?>
-                                                                <div class="user_nav">
-                                                                 
-                                                                    <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
-                                                                    <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
-                                                                
-                                                                </div>
-                                                                 <?php
-                                                             }
-                                                                ?>
-            </a>
+                    <a href="register.php" class="text_nav">
+                                                                     <?php 
+                                                                     if(empty($_SESSION['prenom']))
+                                                                     {
+                                                                         ?>
+                                                                         <a class="login_nav" href="login.php">connectez-vous</a>
+                                                                         <?php
+                                                                     } else 
+                                                                     { ?>
+                                                                        <div class="user_nav">
+                                                                         
+                                                                            <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
+                                                                            <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
+                                                                        
+                                                                        </div>
+                                                                         <?php
+                                                                     }
+                                                                        ?>
+                    </a>
 
-        </li>
+                </li>
 
-        <li>
-            <a href="#"><img src="./Pictures/cart" width="50%" alt=""></a>
-            <a href="#" class="text_nav">
-                <h3>Promotion</h3>
-            </a>
-        </li>
+                <li>
+                    
+                    <a class="panier_nav" href="#" class="text_nav">
+                        <img src="./Pictures/cart" style="width:40%;"  alt="">
+                        <h3>Panier</h3>
+                    </a>
+                </li>
 
-    </ul>
+            </ul>
 
-</nav>
+        </nav>
 
-<!-- end navigation bar -->
+        <!-- end navigation bar -->
 
-</header>
+    </header>
 
 <body>
 
@@ -72,7 +73,7 @@ session_start();
 
         <div class="top_main_wheel">
 
-            <h1>Ptomotion</h1>
+            <h1>Promotion</h1>
 
         </div>
 
@@ -97,7 +98,7 @@ session_start();
         <?php 
 
             require_once'./models/librairies/Artcles.php';
-            while($main_page_upgrade = $upgrade_bdd->fetch()) { ?>
+            while($main_page_upgrade = $req->fetch()) { ?>
 
                 <div class="article_main_info">
 

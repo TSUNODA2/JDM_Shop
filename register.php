@@ -17,7 +17,7 @@
 
             <ul>
                 <li>
-                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" width="10%" alt="logo page principal"></a>
+                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" style="width: 50px;" alt="logo page principal"></a>
                 </li>
 
                 <li>
@@ -45,8 +45,9 @@
                 </li>
 
                 <li>
-                    <a href="#"><img src="./Pictures/cart" width="50%" alt=""></a>
-                    <a href="#" class="text_nav">
+                    
+                    <a class="panier_nav" href="#" class="text_nav">
+                        <img src="./Pictures/cart" style="width:40%;"  alt="">
                         <h3>Panier</h3>
                     </a>
                 </li>
@@ -57,7 +58,7 @@
 
         <!-- end navigation bar -->
 
-    </header>   
+    </header>  
     <main>
         <div class="register_page">
 

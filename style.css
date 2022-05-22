@@ -29,6 +29,12 @@ body {
     background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 800px){
+    .body_page_article {
+        background: #03111c;
+    }
+}
+
 /* nav bar */
 
 nav {
@@ -46,6 +52,18 @@ li {
     display: flex;
     align-items: center;
     margin: 0;
+}
+
+.panier_nav {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    text-decoration: none;
+    color: white;
+}
+
+.panier_nav:hover {
+    color: #B7951E;
 }
 
 .login_nav {
@@ -102,28 +120,12 @@ li {
 
 /* nav bar */
 
-/* car list */
-
-.car_list {
-    display: flex;
-    width: 100%;
-    background: #344e61;
-}
-
-.R32_car_logo {
-    width: 100px;
-    height: 100px;
-    background-image: url(./Pictures/R32_logo.png);
-}
-/* end carlist */
-
 /* carousel  */
 .carousel {
     margin-top: 50px;
     overflow: hidden;
-    width: 800px;
+    width: 70%;
     position: relative;
-    height: 500px;
 }
 
 .carousel .carousel_img,
@@ -187,31 +189,33 @@ li {
 
 .first_case {
     display: flex;
-    flex-direction: column;
-    width: 800px;
+    margin-top: 3.5%;
+    justify-content: space-around;
+    width: 70%;
     background: #0D293D;
 }
 
-.first_case_articles {
+.case_articles {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 }
 
-.first_case_yellow {
+.case_articles a {
     display: flex;
-    justify-content: space-around;
-    width: 800px;
-    background: #B7951E;
-}
-
-.first_case_yellow a {
-    margin-left: 40px;
     text-decoration: none;
-    color: white;
+    justify-content: center;
 }
+
+.case_articles h3 {
+    color: #B7951E;
+    text-decoration: none;
+}
+
 
 .first_case_img:hover {
-    zoom: 102%;
+    opacity: 0.3;
 }
 
 /*home page end first page*/
@@ -448,6 +452,7 @@ img:hover .testimg {
 }
 
 .article_case_detail h4 {
+    display: flex;
     margin-top: 5%;
     color: white;
 }
@@ -473,8 +478,9 @@ main {
     flex-direction: column;
     justify-content: space-around;
     margin: 5%;
-    width: 40%;
-    background-color: #0d293dd9;
+    width: 35%;
+    height: 150%;
+    background: #0d293dd9;
 }
 
 .title_register {
@@ -487,17 +493,19 @@ main {
     border: 1px solid white;
     border-radius: 5px;
     color: white;
-    margin-top: 10px;
+    margin-top: 5%;
     background: none;
     width: 20vw;
-    height: 3vh;
+    height: 4vh;
 }
 
 .button_register {
     background: none;
     color: white;
     border: solid white 1px;
+    margin: 4%;
     border-radius: 5px;
+    width: 20%;
 }
 
 .button_register:hover {
@@ -529,7 +537,7 @@ main {
     color: grey;
 }
 
-/* REGISTER */
+/* END REGISTER */
 
 /* Login */
 .login_page {
