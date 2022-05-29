@@ -14,56 +14,7 @@ session_start();
     <title>boost</title>
 </head>
 
-<header>
-
-        <!-- navigation bar -->
-
-        <nav>
-
-            <ul>
-                <li>
-                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" style="width: 50px;" alt="logo page principal"></a>
-                </li>
-
-                <li>
-
-                    <a href="register.php" class="text_nav">
-                                                                     <?php 
-                                                                     if(empty($_SESSION['prenom']))
-                                                                     {
-                                                                         ?>
-                                                                         <a class="login_nav" href="login.php">connectez-vous</a>
-                                                                         <?php
-                                                                     } else 
-                                                                     { ?>
-                                                                        <div class="user_nav">
-                                                                         
-                                                                            <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
-                                                                            <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
-                                                                        
-                                                                        </div>
-                                                                         <?php
-                                                                     }
-                                                                        ?>
-                    </a>
-
-                </li>
-
-                <li>
-                    
-                    <a class="panier_nav" href="#" class="text_nav">
-                        <img src="./Pictures/cart" style="width:40%;"  alt="">
-                        <h3>Panier</h3>
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-        <!-- end navigation bar -->
-
-    </header>
+<?= require'./header.php'; ?>
 
 <body>
 

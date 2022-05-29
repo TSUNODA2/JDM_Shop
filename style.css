@@ -154,6 +154,23 @@ li {
     color: #B7951E;
 }
 
+.theme {
+    background: #071621;
+}
+
+.theme_list {
+    list-style: none;
+}
+
+.theme_list a {
+    text-decoration: none;
+    color: #B7951E;
+}
+
+.theme_list a:hover {
+    color: white;
+}
+
 /* nav bar */
 
 /* carousel  */
@@ -256,7 +273,7 @@ li {
 
 /*home page end first page*/
 
-/* carousel promotion */
+/* promotion */
 
 .carousel_promos {
     display: flex;
@@ -487,6 +504,18 @@ img:hover .testimg {
 .article_case_detail h4 {
     display: flex;
     margin-top: 5%;
+    color: white;
+}
+
+.add_cart {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    text-decoration: none;
+    color: #B7951E;
+    font-size: x-large;
+}
+.add_cart:hover {
     color: white;
 }
 /* end article page */
@@ -852,11 +881,6 @@ main {
 
 /* panier */
 
-/* .main_panier {
-    display: flex;
-    flex-direction: column;
-} */
-
 .panier_all {
     display: flex;
     align-items: center;
@@ -895,6 +919,10 @@ main {
 
 .login_link_panier:hover {
     color: #0D293D;
+}
+
+.promotion_price {
+    color: red;
 }
 
 

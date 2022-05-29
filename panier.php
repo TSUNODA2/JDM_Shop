@@ -22,71 +22,8 @@ if(!empty($_SESSION['id_user'])) {
 </head>
 
 <body class="body_panier">
-    <header>
-
-        <!-- navigation bar -->
-
-        <nav>
-
-            <ul>
-                <li>
-                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" style="width: 50px;" alt="logo page principal"></a>
-                </li>
-
-                <li>
-
-                    <a href="register.php" class="text_nav">
-                                                                     <?php 
-                                                                     if(empty($_SESSION['prenom']))
-                                                                     {
-                                                                         ?>
-                                                                         <a class="login_nav" href="login.php">connectez-vous</a>
-                                                                         <?php
-                                                                     } else 
-                                                                     { ?>
-                                                                        <div class="user_nav">
-                                                                         
-                                                                            <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
-                                                                            <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
-
-                                                                            <?php 
-                
-                                                                        if(empty($_SESSION['role']))
-                                                                        {
-
-                                                                        } elseif($_SESSION['role'] === 'admin')
-                                                                        { ?>
-                                                                            <a class="admin_button" href="./admin.php">admin</a>
-                                                                <?php } ?>
-                                                                        
-                                                                        </div>
-                                                                         <?php
-                                                                     }
-                                                                        ?>
-                    </a>
-
-                    
-
-
-                </li>
-
-                
-
-                <li>
-                    
-                    <a class="panier_nav" href="#" class="text_nav">
-                        <img src="./Pictures/cart" style="width:40%;"  alt="">
-                        <h3>Panier</h3>
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-        <!-- end navigation bar -->
-
-    </header>
+    
+<?= require'./header.php'; ?>
 
     <main class="main_panier">
 
@@ -109,7 +46,22 @@ if(!empty($_SESSION['id_user'])) {
                         <div class="mid_article_panier">
 
                             <h1> <?= $bdd_show_articles['nom_articles']; ?> </h1>
-                            <h1> <?= $bdd_show_articles['prix_articles']; ?> €</h1>
+                            
+                            <?php
+                                        if($bdd_show_articles['id_theme_articles'] == 1 )
+                                        {
+                                            $promotion_calcul = $bdd_show_articles['prix_articles'];
+                                            $result = ($promotion_calcul * 15) / 100;
+                                            $final_price = $promotion_calcul - $result; ?>
+                                            <h1><strike> <?= $bdd_show_articles['prix_articles']; ?> €</strike></h1>
+                                            <h1 class="promotion_price"> <?= $final_price ?> €</h1>
+
+                                       <?php } else { ?>
+
+                                           <h1> <?= $bdd_show_articles['prix_articles']; ?> €</h1>
+
+                                      <?php } ?>
+
                             <a href="./delete.php?delete_article_panier=<?= $bdd_panier['id_panier']; ?>">supprimer</a>
 
                         </div>
@@ -118,7 +70,7 @@ if(!empty($_SESSION['id_user'])) {
                  <?php } 
                   } ?>
             <?php } else { ?>
-                 <h2>Vous devez être connecter pour pouvoir vous achetez un article</h2> <a class="login_link_panier" href="./login.php">connectez-vous</a>
+                 <h2> Vous devez être connecter pour pouvoir vous achetez un article</h2> <a class="login_link_panier" href="./login.php" >connectez-vous</a>
             <?php } ?>
 
         </div>    

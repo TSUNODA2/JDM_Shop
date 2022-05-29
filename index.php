@@ -14,76 +14,9 @@ session_start();
 </head>
 
 <body>
-    <header>
 
-        <!-- navigation bar -->
+<?= require'./header.php'; ?>
 
-        <nav>
-
-            <ul>
-                <li>
-                    <a href="index.php"><img src="./Pictures/logo jdm shop.png" style="width: 50px;" alt="logo page principal"></a>
-                </li>
-
-                <li>
-
-                    <a href="register.php" class="text_nav">
-                                                                     <?php 
-                                                                     if(empty($_SESSION['prenom']))
-                                                                     {
-                                                                         ?>
-                                                                         <a class="login_nav" href="login.php">connectez-vous</a>
-                                                                         <?php
-                                                                     } else 
-                                                                     { ?>
-                                                                        <div class="user_nav">
-                                                                         
-                                                                            <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
-                                                                            <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
-
-                                                                            <?php 
-                
-                                                                        if(empty($_SESSION['role']))
-                                                                        {
-
-                                                                        } elseif($_SESSION['role'] === 'admin')
-                                                                        { ?>
-                                                                            <a class="admin_button" href="./admin.php">admin</a>
-                                                                <?php } ?>
-                                                                        
-                                                                        </div>
-                                                                         <?php
-                                                                     }
-                                                                        ?>
-                    </a>
-
-                    
-
-
-                </li>
-
-                
-
-                <li>
-                    <?php if(!empty($_SESSION['id_user'])) { ?>
-                        <a class="panier_nav" href="./panier.php?id_relation_panier=<?= $_SESSION['id_user']; ?>" class="text_nav">
-                        <img src="./Pictures/cart" style="width:40%;"  alt="">
-                        <h3>Panier</h3></a>
-                   <?php } else { ?>
-                    <a class="panier_nav" href="./panier.php" class="text_nav"><img src="./Pictures/cart" style="width:40%;"  alt="">
-                        <h3>Panier</h3></a>
-                 <?php } ?>
-                    
-                    
-                </li>
-
-            </ul>
-
-        </nav>
-
-        <!-- end navigation bar -->
-
-    </header>
     <main>
 
     <!-- carousel -->
@@ -148,7 +81,8 @@ session_start();
 
                 <?php
                 require_once './models/librairies/Artcles.php';
-                while ($bdd_promotions = $req->fetch()) { ?>
+                
+                while($bdd_promotions = $req->fetch()) { ?>
 
                         <div class="case_carousel_articles_promotion">
 
@@ -198,7 +132,8 @@ session_start();
 
 
                     <?php
-                    require_once './models/librairies/Artcles.php';
+                    // require_once './models/librairies/Artcles.php';
+                    $merch = $bdd->query('SELECT id_articles, nom_articles, prix_articles, articles_pictures FROM articles WHERE id_articles BETWEEN 1 AND 7 ');
                     while ($bdd_merch = $merch->fetch()) { ?>
 
                         <div class="article_merch">
