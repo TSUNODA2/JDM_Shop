@@ -129,6 +129,8 @@ require_once'./models/config.php';
                     
                             <h4> <?= $show_article['dsc_articles']; ?> </h4>
 
+                            <a href="./panier_traitement.php?id_article_cart=<?= $show_article['id_articles']; ?>">Ajouter au panier</a>
+
                         </div>
 
                     </div>
@@ -136,7 +138,6 @@ require_once'./models/config.php';
             </div>
 
             <!-- en article card -->
-
 </main>
 </body>
 

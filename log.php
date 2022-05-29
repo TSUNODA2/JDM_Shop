@@ -10,7 +10,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
 
     if(!empty($email) && !empty($password))
     {
-        $select = $bdd->prepare("SELECT prenom, email, password, role FROM user WHERE email = ?");
+        $select = $bdd->prepare("SELECT id_user, prenom, email, password, role FROM user WHERE email = ?");
         $select->execute([$email]);
 
         $data = $select->fetch();
@@ -22,6 +22,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
                 $_SESSION["role"] = $data["role"];
                 $_SESSION['email'] = $data["email"];
                 $_SESSION['prenom'] = $data['prenom'];
+                $_SESSION['id_user'] = $data['id_user'];
 
                 if($data["role"] === "admin")
                 {

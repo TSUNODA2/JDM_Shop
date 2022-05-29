@@ -15,4 +15,5 @@ $fluide_bdd = $bdd->query('SELECT id_articles, nom_articles, prix_articles, arti
 
 $upgrade_bdd = $bdd->query('SELECT id_articles, nom_articles, prix_articles, articles_pictures FROM articles WHERE id_theme_articles = 6');
 
+
 ?>

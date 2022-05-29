@@ -40,6 +40,16 @@ session_start();
                                                                          
                                                                             <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
                                                                             <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
+
+                                                                            <?php 
+                
+                                                                        if(empty($_SESSION['role']))
+                                                                        {
+
+                                                                        } elseif($_SESSION['role'] === 'admin')
+                                                                        { ?>
+                                                                            <a class="admin_button" href="./admin.php">admin</a>
+                                                                <?php } ?>
                                                                         
                                                                         </div>
                                                                          <?php
@@ -47,14 +57,24 @@ session_start();
                                                                         ?>
                     </a>
 
+                    
+
+
                 </li>
 
+                
+
                 <li>
-                    
-                    <a class="panier_nav" href="#" class="text_nav">
+                    <?php if(!empty($_SESSION['id_user'])) { ?>
+                        <a class="panier_nav" href="./panier.php?id_relation_panier=<?= $_SESSION['id_user']; ?>" class="text_nav">
                         <img src="./Pictures/cart" style="width:40%;"  alt="">
-                        <h3>Panier</h3>
-                    </a>
+                        <h3>Panier</h3></a>
+                   <?php } else { ?>
+                    <a class="panier_nav" href="./panier.php" class="text_nav"><img src="./Pictures/cart" style="width:40%;"  alt="">
+                        <h3>Panier</h3></a>
+                 <?php } ?>
+                    
+                    
                 </li>
 
             </ul>
@@ -133,7 +153,7 @@ session_start();
                         <div class="case_carousel_articles_promotion">
 
                             <a href="./article.php?id_article=<?= $bdd_promotions['id_articles']; ?> "><img width="90%" src="Pictures/<?= $bdd_promotions['articles_pictures'];  ?>"></a>
-                            <p id="prix_promos"><strike style="color:red"><?= $bdd_promotions['prix_articles']; ?>$</strike></p>
+                            <p id="prix_promos"><strike style="color:red"><?= $bdd_promotions['prix_articles']; ?> €</strike></p>
 
                             <!-- calcul -15% articles en promotions -->
 
@@ -142,7 +162,7 @@ session_start();
                                                         $result = ($promotion_calcul * 15) / 100;
                                                         $final_price = $promotion_calcul - $result;
                                                         echo $final_price;
-                                                        ?><p>$</p>
+                                                        ?><p> €</p>
                             </div>
 
                             <!-- fin calcul -15% articles en promotions -->
@@ -183,17 +203,17 @@ session_start();
 
                         <div class="article_merch">
 
-                                <a class="img_articles" href="./article.php?id_article=<?=$bdd_merch['id_articles']; ?>"><img width="45%" src="Pictures/<?php echo $bdd_merch['articles_pictures'];  ?>" alt="merch picture"></a>
+                                <a class="img_articles" href="./article.php?id_article=<?= $bdd_merch['id_articles']; ?>"><img width="45%" src="Pictures/<?= $bdd_merch['articles_pictures'];  ?>" alt="merch picture"></a>
 
                                 <div class="testimg">
                                     <div class="testt">Ajouter au panier</div>
                                 </div>
 
-                            <p id="prix_merch"> <?php echo $bdd_merch['prix_articles']; ?> $</p>
+                            <p id="prix_merch"> <?= $bdd_merch['prix_articles']; ?> €</p>
 
                             <div class="name_merch">
 
-                                <?php echo $bdd_merch['nom_articles']; ?>
+                                <?= $bdd_merch['nom_articles']; ?>
 
                             </div>
 
@@ -222,16 +242,16 @@ session_start();
                     require_once './models/librairies/Artcles.php';
                     while ($bdd_ecu = $ecu->fetch()) { ?>
                         <div class="article_ecu">
-                            <a class="img_ecu" href="./article.php?id_article=<?=$bdd_ecu['id_articles']; ?> "><img width="50%" src="Pictures/<?php echo $bdd_ecu['articles_pictures']; ?>" alt="ecu pictures"></a>
+                            <a class="img_ecu" href="./article.php?id_article=<?= $bdd_ecu['id_articles']; ?> "><img width="50%" src="Pictures/<?= $bdd_ecu['articles_pictures']; ?>" alt="ecu pictures"></a>
 
                             <div class="mid_info_ecu">
 
-                                <p id="prix_ecu"> <?php echo $bdd_ecu['prix_articles']; ?> $</p>
+                                <p id="prix_ecu"> <?= $bdd_ecu['prix_articles']; ?> €</p>
                                 
                             </div>
 
                             <div class="name_ecu">
-                                <?php echo $bdd_ecu['nom_articles']; ?>
+                                <?= $bdd_ecu['nom_articles']; ?>
                             </div>
                         </div>
                     <?php } ?>

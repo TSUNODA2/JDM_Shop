@@ -9,7 +9,7 @@ if($_SESSION["role"] === "admin")
     
 } else if($_SESSION["role"] === "user")
 {
-    header("location: index.php?error=vous devez avoir un role admin pour acceder a cette page");
+    header("location: index.php");
 } else if($_SESSION["role"] == '' ) {
     header("location: index.php");
 }
@@ -93,7 +93,6 @@ if($_SESSION["role"] === "admin")
                     <th>prenom</th>
                     <th>email</th>
                     <th>role</th>
-                    <th>pictures</th>
                     <th>delete</th>
                     <th>set admin</th>
                     <th>set user</th>
@@ -115,7 +114,6 @@ if($_SESSION["role"] === "admin")
 
 
                             <th> <?= $user_admin['role']?></th>
-                            <th><?= $user_admin['url_pictures']?></th>
                             <th><a class="btn_del_user" href="./delete.php?id_register_delete=<?= $user_admin['id_user'] ?>">Delete</a></th> <!-- btn for delete the user -->
                             <th><a class="btn_set_admin" href="./role.php?id_register_admin=<?= $user_admin['id_user'] ?>">admin</a></th> <!-- for set admin role to the user -->
                             <th><a class="btn_set_user" href="./role.php?id_register_user=<?= $user_admin['id_user'] ?>">user</a></th> <!-- for set user role to the user -->
@@ -249,7 +247,6 @@ if($_SESSION["role"] === "admin")
 
         </div>
         <!-- end create article -->
-
 
     </main>
 </body>

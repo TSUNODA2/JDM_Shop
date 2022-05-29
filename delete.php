@@ -24,6 +24,16 @@ if(isset($_GET['id_article_delete']))
 
     header('location: admin.php');
 
-}else echo"you can't delete this"
+}else echo "you can't delete this";
+
+if(isset($_GET['delete_article_panier'])){
+
+    $delete_article_panier = $bdd->prepare('DELETE FROM panier WHERE id_panier = ?');
+    $delete_article_panier->execute(array($_GET['delete_article_panier']));
+
+    header('location: panier.php');
+    
+}else echo "impossible de supprimer l'article";
+    
 
 ?>

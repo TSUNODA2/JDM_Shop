@@ -29,13 +29,15 @@ body {
     background-repeat: no-repeat;
 }
 
+.body_panier {
+    background-image: url(./Pictures/FAF_build.PNG);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 800px){
 
-    .body_page_article {
-        background: #03111c;
-    }
-    
-    .body_login {
+    .body_page_article, .body_login, .body_panier {
         background: #03111c;
     }
 
@@ -46,6 +48,16 @@ body {
 
     .body_register {
         background: #03111c;
+    }
+
+    .bottom_article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ecu_case {
+        margin-top: 5%;
     }
 
 }
@@ -111,6 +123,15 @@ li {
 .logout_button button:hover {
     cursor: pointer;
     color: rgb(146, 0, 0);
+}
+
+.admin_button {
+    text-decoration: none;
+    color: white;
+}
+
+.admin_button:hover {
+    color: #B7951E;
 }
 
 .user_show {
@@ -828,3 +849,53 @@ main {
 }
 
 /* end main articles page */
+
+/* panier */
+
+/* .main_panier {
+    display: flex;
+    flex-direction: column;
+} */
+
+.panier_all {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #0d293dbf;
+    width: 50%;
+    margin-top: 5%;
+}
+
+.article_panier {
+    display: flex;
+    width: 70%;
+    background: #0D293D;
+    margin: 3%;
+}
+
+.mid_article_panier {
+    display: flex;
+    flex-direction: column;
+}
+
+.mid_article_panier a {
+    text-decoration: none;
+    color: red;
+}
+
+.mid_article_panier a:hover {
+    color: #B7951E;
+}
+
+.login_link_panier {
+    text-decoration: none;
+    color: #B7951E;
+    font-size: x-large;
+}
+
+.login_link_panier:hover {
+    color: #0D293D;
+}
+
+
+/* end panier */
