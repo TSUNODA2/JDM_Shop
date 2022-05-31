@@ -60,6 +60,25 @@ body {
         margin-top: 5%;
     }
 
+    .article_case_detail {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .article_case_detail img {
+        width: 40%;
+    }
+
+    .theme_list a{
+        font-size: 80%;
+    }
+
+    ul {
+        padding: 0;
+        column-gap: 10%;
+    }
+
 }
 
 /* nav bar */
@@ -135,7 +154,6 @@ li {
 }
 
 .user_show {
-    text-decoration: none;
     color: white;
 }
 
@@ -156,9 +174,14 @@ li {
 
 .theme {
     background: #071621;
+    list-style: none;
 }
 
 .theme_list {
+    list-style: none;
+}
+
+.theme_list li {
     list-style: none;
 }
 
@@ -280,7 +303,6 @@ li {
     flex-direction: column;
     width: 60%;
     background: #0D293D;
-    /* width: 51%; */
     margin-top: 55px;
 }
 
@@ -443,13 +465,13 @@ img:hover .testimg {
 .merch_case {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 400px;
 }
 
 .ecu_case {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 400px;
 }
 
 .mid_info_ecu {
@@ -852,7 +874,6 @@ main {
     justify-content: center;
     flex-direction: column;
     width: 30%;
-    /* margin: 3%; */
 }
 
 .article_main_info h3 {
@@ -875,6 +896,12 @@ main {
 
 .name_article_wheel:hover {
     opacity: 0.3;
+}
+
+.promo_case {
+    display: flex;
+    padding: 10%;
+    flex-direction: column;
 }
 
 /* end main articles page */
@@ -924,6 +951,5 @@ main {
 .promotion_price {
     color: red;
 }
-
 
 /* end panier */

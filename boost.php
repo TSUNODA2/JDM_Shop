@@ -36,7 +36,7 @@ session_start();
 
         <div class="texte_explication_wheel">
 
-            <h4>Vous souhaitez cramer toute les golf R de KEKE ? c'est ici que ca ce passe !</h4>
+            <h4> Vous voulez satellisez votre véhicule ? c'est ici que ça se passe ! </h4>
 
         </div>
 

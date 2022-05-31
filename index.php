@@ -9,7 +9,6 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
     <title>accueil</title>
 </head>
 
@@ -60,7 +59,7 @@ session_start();
 
             <div class="case_articles">
 
-                <a href="./boost.php" class="first_case_img"><img src="./Pictures/turbo-garrett-g25-550-072-ar-871389-5004s.png" width="50%" alt="turbo"></a>
+                <a href="./boost.php" class="first_case_img"><img src="./Pictures/turbo_garrette.png" width="50%" alt="turbo"></a>
                 <a href="#"><h3>Boost !!!</h3></a>
 
             </div>
@@ -132,8 +131,7 @@ session_start();
 
 
                     <?php
-                    // require_once './models/librairies/Artcles.php';
-                    $merch = $bdd->query('SELECT id_articles, nom_articles, prix_articles, articles_pictures FROM articles WHERE id_articles BETWEEN 1 AND 7 ');
+                    require_once './models/librairies/Artcles.php';
                     while ($bdd_merch = $merch->fetch()) { ?>
 
                         <div class="article_merch">

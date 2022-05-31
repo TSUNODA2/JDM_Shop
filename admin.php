@@ -113,7 +113,7 @@ if($_SESSION["role"] === "admin")
                     <!-- the input show and we can modify all we want for the article -->
 
                     <th><input type="text" name="nom_articles_admin" id="input_articles_admin" value="<?= $article_admin['nom_articles'] ?>"></th>
-                    <th><input type="text" value="<?= $article_admin['prix_articles'] ?>  $" name="prix_articles_admin" id="prix_articles_admin" size="10"></th>
+                    <th><input type="text" value="<?= $article_admin['prix_articles'] ?>  €" name="prix_articles_admin" id="prix_articles_admin" size="10"></th>
                     <th><input type="text" name="articles_pictures_admin" id="image_article_admin" value="<?= $article_admin['articles_pictures'] ?>"></th>
 
                     <th><input type="text" name="theme_article" id="theme_admin" value="<?= $article_admin['id_theme_articles'] ?>"></th>

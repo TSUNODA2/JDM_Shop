@@ -22,7 +22,7 @@
                                                              { ?>
                                                                 <div class="user_nav">
                                                                  
-                                                                    <a class="user_show" href="user.php"><h3>bonjour,<?= $_SESSION['prenom']; ?></h3></a> 
+                                                                    <h3 class="user_show">bonjour,<?= $_SESSION['prenom']; ?></h3> 
                                                                     <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
 
                                                                     <?php 
@@ -72,7 +72,7 @@
         <li><a href="./ecu.php">électroniques</a></li>
         <li><a href="./fluide">Fluides</a></li>
         <li><a href="./merch.php">Merch</a></li>
-        <li><a href="./wheel.php">Roue / Direction</a></li>
+        <li><a href="./wheel.php">Roue</a></li>
 
     </ul>
 </div>

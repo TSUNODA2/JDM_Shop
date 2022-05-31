@@ -39,7 +39,7 @@
                     case 'empty' :
                         ?>
                         <div class="error">
-                            <strong>Erreur</strong> entrer tout les champs demander !
+                            <strong>Erreur</strong> entrer tous les champs demandés !
                         </div>
                         <?php
                         break;
@@ -55,7 +55,7 @@
                     case 'password':
                         ?>
                         <div class="error">
-                            <strong>Erreur</strong> Les mots de passe ne correspondent pas !
+                            <strong>Erreur</strong> Les mots de passe ne correspondents pas !
                         </div>
                         <?php
                         break;
