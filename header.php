@@ -11,39 +11,31 @@
 
         <li>
 
-            <a href="register.php" class="text_nav">
                                                              <?php 
-                                                             if(empty($_SESSION['prenom']))
+                                                             if(empty($_SESSION['prenom']))  // check if she have a name in the session
                                                              {
                                                                  ?>
-                                                                 <a class="login_nav" href="login.php">connectez-vous</a>
+                                                                 <a class="login_nav" href="login.php">connectez-vous</a> <!-- if she doesn't have a name they give him a link to log or register -->
                                                                  <?php
-                                                             } else 
-                                                             { ?>
-                                                                <div class="user_nav">
+                                                             } else { ?>
+                                                                <div class="user_nav"> <!-- if they found a name, he show him her name and a button to disconect him -->
                                                                  
                                                                     <h3 class="user_show">bonjour,<?= $_SESSION['prenom']; ?></h3> 
                                                                     <a class="logout_button" href="logout.php"><button>LOGOUT</button></a>
 
                                                                     <?php 
-        
-                                                                if(empty($_SESSION['role']))
+                                                             }
+                                                                if(empty($_SESSION['role'])) // check if the user have a role admin
                                                                 {
+                                                                        //if the user don't have a admin role only the name and the logout button has been show
 
-                                                                } elseif($_SESSION['role'] === 'admin')
+                                                                } elseif($_SESSION['role'] === 'admin')// if the user have a admin role they give him a button to have acces to the admin page 
                                                                 { ?>
                                                                     <a class="admin_button" href="./admin.php">admin</a>
                                                         <?php } ?>
                                                                 
                                                                 </div>
-                                                                 <?php
-                                                             }
-                                                                ?>
-            </a>
-
-            
-
-
+                                                                 
         </li>
 
         

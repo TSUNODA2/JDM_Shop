@@ -14,7 +14,7 @@ session_start();
 
 <body>
 
-<?= require'./header.php'; ?>
+<?php require'./header.php'; ?>
 
     <main>
 

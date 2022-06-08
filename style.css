@@ -79,6 +79,22 @@ body {
         column-gap: 10%;
     }
 
+    .produits_modif {
+        margin-right: 90%;
+        width: 10%;
+    }
+
+    .table_mid_articles {
+        font-size: large;
+    }
+
+    .panier_all {
+        width: 100px;
+    }
+
+    .article_panier {
+        width: 300px;
+    }
 }
 
 /* nav bar */
@@ -155,21 +171,6 @@ li {
 
 .user_show {
     color: white;
-}
-
-.user_show:hover {
-    color: #B7951E;
-}
-
-.text_nav {
-    text-decoration: none;
-    list-style: none;
-    color: white;
-}
-
-.text_nav:hover {
-    cursor: pointer;
-    color: #B7951E;
 }
 
 .theme {
@@ -913,13 +914,13 @@ main {
     align-items: center;
     flex-direction: column;
     background: #0d293dbf;
-    width: 50%;
+    width: 450px;
     margin-top: 5%;
 }
 
 .article_panier {
     display: flex;
-    width: 70%;
+    width: 400px;
     background: #0D293D;
     margin: 3%;
 }

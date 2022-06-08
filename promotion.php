@@ -14,7 +14,7 @@ session_start();
     <title>boost</title>
 </head>
 
-<?= require'./header.php'; ?>
+<?php require'./header.php'; ?>
 
 <body>
 

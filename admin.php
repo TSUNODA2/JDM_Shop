@@ -27,7 +27,7 @@ if($_SESSION["role"] === "admin")
 </head>
 <body class="page_admin_body">
     
-<?= require'./header.php'; ?>
+<?php require'./header.php'; ?>
 
     <main class="main_admin_page">
 
@@ -38,7 +38,7 @@ if($_SESSION["role"] === "admin")
             
         <table class="table_users">
         
-                <tr class="table_top_users">
+                <tr class="table_top_users"> <!-- header of the user table -->
 
                     <th>nom</th>
                     <th>prenom</th>
@@ -59,12 +59,12 @@ if($_SESSION["role"] === "admin")
 
                     <tr class="table_mid_users">
 
-                        <th><?= $user_admin['nom']?></th>
-                        <th><?= $user_admin['prenom']?></th>           
-                        <th><?= $user_admin['email']?></th>
+                        <th><?= $user_admin['nom']?></th> <!-- show the user nickname -->
+                        <th><?= $user_admin['prenom']?></th> <!-- show the user name -->     
+                        <th><?= $user_admin['email']?></th> <!-- show the user email -->
 
 
-                            <th> <?= $user_admin['role']?></th>
+                            <th> <?= $user_admin['role']?></th> <!-- show role of the user -->
                             <th><a class="btn_del_user" href="./delete.php?id_register_delete=<?= $user_admin['id_user'] ?>">Delete</a></th> <!-- btn for delete the user -->
                             <th><a class="btn_set_admin" href="./role.php?id_register_admin=<?= $user_admin['id_user'] ?>">admin</a></th> <!-- for set admin role to the user -->
                             <th><a class="btn_set_user" href="./role.php?id_register_user=<?= $user_admin['id_user'] ?>">user</a></th> <!-- for set user role to the user -->
@@ -87,7 +87,7 @@ if($_SESSION["role"] === "admin")
 
             <table class="table_produits_modif">
 
-            <tr class="table_top_articles">
+            <tr class="table_top_articles"> <!-- header table edit  -->
 
                 <th>Nom produit</th>
                 <th>Prix produit</th>
@@ -108,7 +108,7 @@ if($_SESSION["role"] === "admin")
                 
                 <tr class="table_mid_articles">
 
-                    <form action="./articles_admin.php?id=<?=$article_admin['id_articles']?>" method="post">
+                    <form action="./articles_admin.php?id=<?=$article_admin['id_articles']?>" method="post"> <!-- create a form for edit the article in function of the article -->
 
                     <!-- the input show and we can modify all we want for the article -->
 
@@ -132,13 +132,13 @@ if($_SESSION["role"] === "admin")
             </table>
         </div>
 
-        <!-- end modif article -->
+        <!-- end edit article -->
 
         <!-- add article -->
 
         <div class="div_add_article">
 
-            <form action="./add_article_admin.php" method="post">
+            <form action="./add_article_admin.php" method="post"> <!-- this form work with the page article for post the article to the bdd -->
 
                 <!-- table with all case to create a product -->
                 
@@ -149,6 +149,8 @@ if($_SESSION["role"] === "admin")
                     <td><h3>ADD ARTICLES</h3></td>
 
                     </tr>
+
+                    <!-- table for create the article this table are relate with the add article pages with the input name  -->
 
                     <tr>
                         <td><h5>Nom produit :</h5></td>
@@ -189,7 +191,7 @@ if($_SESSION["role"] === "admin")
                     
                     <tr>
 
-                    <td><input type="submit" class="btn_send_article" value="ajouter"></td>
+                    <td><input type="submit" class="btn_send_article" value="ajouter"></td> <!-- this button submit all the content to the add page for add him at the bdd -->
                     
                     </tr>
                 </table>

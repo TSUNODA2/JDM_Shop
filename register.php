@@ -10,7 +10,7 @@
 <body class="body_register">
     
 
-    <?= require'./header.php'; ?>
+    <?php require'./header.php'; ?>
 
 <form action="register_traitement.php" method="POST">
     

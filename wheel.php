@@ -13,7 +13,7 @@ session_start();
     <title>wheel</title>
 </head>
 
-<?= require'./header.php'; ?>
+<?php require'./header.php'; ?>
 
 <body>
 <!-- wheel case -->

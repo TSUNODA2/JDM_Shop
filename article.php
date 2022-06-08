@@ -25,7 +25,7 @@ require_once'./models/config.php';
 
 </head>
 
-<?= require'./header.php'; ?>
+<?php require'./header.php'; ?>
 
 <body class="body_page_article">
 
@@ -46,7 +46,7 @@ require_once'./models/config.php';
 
                     <div class="article_case_detail">
                     
-                        <img width="40%" src="./Pictures/<?= $show_article['articles_pictures']; ?>" alt="image article">
+                        <img width="30%" src="./Pictures/<?= $show_article['articles_pictures']; ?>" alt="image article">
 
                         <div class="promo_case">
 

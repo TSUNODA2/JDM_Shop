@@ -14,7 +14,7 @@ session_start();
     <title>merch</title>
 </head>
 
-<?= require'./header.php'; ?>
+<?php require'./header.php'; ?>
 
 <body>
 

@@ -12,7 +12,7 @@ require_once'./models/config.php';
     <title>login</title>
 </head>
  
-<?= require'./header.php'; ?>
+<?php require'./header.php'; ?>
     
     <body class="body_login">
 

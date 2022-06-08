@@ -14,7 +14,7 @@ session_start();
     <title>fluide</title>
 </head>
 
-<?= require'./header.php'; ?>
+<?php require'./header.php'; ?>
 
 <body>
 

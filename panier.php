@@ -23,32 +23,32 @@ if(!empty($_SESSION['id_user'])) {
 
 <body class="body_panier">
     
-<?= require'./header.php'; ?>
-
+<?php require_once'./header.php'; ?>
     <main class="main_panier">
 
         <div class="panier_all">
     
          <?php 
-             if(!empty($_SESSION['id_user'])) {
-                $recup_article = $bdd->query("SELECT id_panier, id_articles FROM panier WHERE id_user = '$id_user'");
+             if(!empty($_SESSION['id_user'])) { // check a user id exist in the session 
+                $recup_article = $bdd->query("SELECT id_panier, id_articles FROM panier WHERE id_user = '$id_user'"); // this request take all the id of the article link to the id of the user
                 while($bdd_panier = $recup_article->fetch()) { ?>
             
                  <?php
-                 $recup_id_articles = $bdd_panier['id_articles'];
-                 $recup_detail_articles = $bdd->query("SELECT * FROM articles WHERE id_articles = '$recup_id_articles' ");
-                 while($bdd_show_articles = $recup_detail_articles->fetch()) { ?>
+                 $recup_id_articles = $bdd_panier['id_articles']; // repeat all the article id link with the user
+                 $recup_detail_articles = $bdd->query("SELECT * FROM articles WHERE id_articles = '$recup_id_articles' "); // take all the article information
+                 while($bdd_show_articles = $recup_detail_articles->fetch()) { ?> <!-- a while repeat all the articles necessary  -->
 
                     <div class="article_panier">
 
-                     <img width="150px" src="./Pictures/<?= $bdd_show_articles['articles_pictures']; ?>" alt="image <?= $bdd_show_articles['nom_articles']; ?>">
+                     <img width="120px" src="./Pictures/<?= $bdd_show_articles['articles_pictures']; ?>" alt="image <?= $bdd_show_articles['nom_articles']; ?>"> <!-- show picture of the articles -->
 
                         <div class="mid_article_panier">
 
-                            <h1> <?= $bdd_show_articles['nom_articles']; ?> </h1>
+                            <h1> <?= $bdd_show_articles['nom_articles']; ?> </h1> <!-- show the name of the articles -->
                             
                             <?php
-                                        if($bdd_show_articles['id_theme_articles'] == 1 )
+                                        // check if the article select, if the article are in promotion he take the price and add a promotion of -15%, but if the article are not in promotion the price has been show
+                                        if($bdd_show_articles['id_theme_articles'] == 1 ) 
                                         {
                                             $promotion_calcul = $bdd_show_articles['prix_articles'];
                                             $result = ($promotion_calcul * 15) / 100;
@@ -62,7 +62,7 @@ if(!empty($_SESSION['id_user'])) {
 
                                       <?php } ?>
 
-                            <a href="./delete.php?delete_article_panier=<?= $bdd_panier['id_panier']; ?>">supprimer</a>
+                            <a href="./delete.php?delete_article_panier=<?= $bdd_panier['id_panier']; ?>">supprimer</a> <!-- this input delete the article of the cart -->
 
                         </div>
 
@@ -70,7 +70,7 @@ if(!empty($_SESSION['id_user'])) {
                  <?php } 
                   } ?>
             <?php } else { ?>
-                 <h2> Vous devez être connecter pour pouvoir vous achetez un article</h2> <a class="login_link_panier" href="./login.php" >connectez-vous</a>
+                 <h2> Vous devez être connecter pour pouvoir vous achetez un article</h2> <a class="login_link_panier" href="./login.php" >connectez-vous</a> <!-- if the user are not connected a link give to him a link to connect him or create account -->
             <?php } ?>
 
         </div>    
